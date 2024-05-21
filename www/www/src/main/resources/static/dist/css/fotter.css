@@ -1,0 +1,21 @@
+.fotter{
+    margin-top: 75px;
+}
+
+.fotter>ul{
+    list-style: none;
+}
+.fotter>ul>li>p{
+    font-size: 12px;
+}
+.fotter>button{
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+    background-color: #0a53be;
+    border-style: none;
+    color: white;
+
+   
+}
