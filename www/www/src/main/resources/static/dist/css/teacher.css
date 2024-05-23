@@ -1,0 +1,31 @@
+.container {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.min_teacher {
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.teacher {
+    background-color: lightgray;
+    width: 30%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 1.66%;
+}
+
+.container>.min_teacher>.teacher>.image_box>.image {
+    flex-wrap: wrap;
+    height: 50%;
+    width: 50%;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{layout::setFragment(~{this::content})}">
+    <th:block th:fragment="content">
+        <link rel="stylesheet" th:href="@{/dist/css/teacher.css}">
+        <script th:src="@{/js/teacher.js}"></script>
+        <form action="/test/information">
+        <h1>자랑스러운 우리 선생님들을 소개합니다</h1>
+        <div class="container">
+            <div class="big_teacher">
+                큰이미지 선생님 사진 들어 갈곳 입니다
+                <p>하이하이하하이하이</p>
+            </div>
+            <div class="min_teacher">
+                <div class="teacher">
+                    <div class="image_box">
+                        <img class="image" th:src="@{/dist/image/강아지3.jpg}">
+                    </div>
+                    <div class="text_box">
+                        <p>안녕하세요 저는 누구입니다</p>
+                        <p>저의 경력은 강아지 키우기 몇년</p>
+                        <p>고양이 키우기 몇년 입니다</p>
+                        <p>당신의 소중한 가족 저한테 맡겨주세요</p>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="image_box">
+                        <img class="image" th:src="@{/dist/image/강아지3.jpg}">
+                    </div>
+                    <div class="text_box">
+                        <p>안녕하세요 저는 누구입니다</p>
+                        <p>저의 경력은 강아지 키우기 몇년</p>
+                        <p>고양이 키우기 몇년 입니다</p>
+                        <p>당신의 소중한 가족 저한테 맡겨주세요</p>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="image_box">
+                        <img class="image" th:src="@{/dist/image/강아지3.jpg}">
+                    </div>
+                    <div class="text_box">
+                        <p>안녕하세요 저는 누구입니다</p>
+                        <p>저의 경력은 강아지 키우기 몇년</p>
+                        <p>고양이 키우기 몇년 입니다</p>
+                        <p>당신의 소중한 가족 저한테 맡겨주세요</p>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="image_box">
+                        <img class="image" th:src="@{/dist/image/강아지3.jpg}">
+                    </div>
+                    <div class="text_box">
+                        <p>안녕하세요 저는 누구입니다</p>
+                        <p>저의 경력은 강아지 키우기 몇년</p>
+                        <p>고양이 키우기 몇년 입니다</p>
+                        <p>당신의 소중한 가족 저한테 맡겨주세요</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </th:block>
+</th:block>
+</html>
