@@ -1,0 +1,19 @@
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.teacher {
+    flex:25%; /* 각 요소가 한 줄에 두 개씩 배치되도록 너비 설정 */
+    margin: 10px;  /* 여백 추가 */
+}
+
+.teacherimage {
+    margin-top: 20px;
+    height: 300px;
+    width: 300px;
+}
