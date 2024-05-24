@@ -9,8 +9,8 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
         <link rel="stylesheet" th:href="@{/dist/css/bootstrap.min.css}">
         <script th:src="@{/dist/js/bootstrap.bundle.min.js}"></script>
 
-        <link rel="stylesheet" th:href="@{dist/css/header.css}">
-        <link rel="stylesheet" th:href="@{dist/css/footer.css}">
+        <link rel="stylesheet" th:href="@{/dist/css/header.css}">
+        <link rel="stylesheet" th:href="@{/dist/css/footer.css}">
 
     </head>
 
@@ -40,7 +40,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
         <div class="group1">
             <ul>
                 <li><a th:href="@{/test/informaiton}">산책</a></li>
-                <li><a href="">케어서비스</a></li>
+                <li><a th:href="@{/test/pay}">케어서비스</a></li>
                 <li><a href="">훈련서비스</a></li>
                 <li><a href="">정기케어</a></li>
                 <li><a href="">스토어</a></li>

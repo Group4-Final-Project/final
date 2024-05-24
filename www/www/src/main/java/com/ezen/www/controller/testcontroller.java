@@ -19,4 +19,8 @@ public class testcontroller {
    public String information(){
       return "information";
    }
+   @GetMapping("/pay")
+   public String pay(){
+      return "pay";
+   }
 }
