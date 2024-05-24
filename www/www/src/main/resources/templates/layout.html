@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <!--레이아웃 잡기-->
 <th:block th:fragment="setFragment(content)">
     <head>
         <meta charset="UTF-8">
         <title>PetCare</title>
-        <link rel="stylesheet" th:href="@{/dist/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/dist/css/bootstrap.min.css?after}">
         <script th:src="@{/dist/js/bootstrap.bundle.min.js}"></script>
 
-        <link rel="stylesheet" th:href="@{dist/css/header.css}">
-        <link rel="stylesheet" th:href="@{dist/css/footer.css}">
+        <link rel="stylesheet" th:href="@{/dist/css/header.css}">
+        <link rel="stylesheet" th:href="@{/dist/css/footer.css}">
 
     </head>
 
@@ -24,13 +25,13 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
             </div>
 
             <div class="Logo">
-                <img th:src="@{/dist/image/petMainLogo.jpg}" alt="No image">
+                <a th:href="@{/}"><img th:src="@{/dist/image/petMainLogo.jpg}" alt="No image"></a>
             </div>
 
             <div class="group">
-                <div class="Login">Login</div>
+                <div class="Login"><a th:href="@{/member/login}">Login</a></div>
                 <div class="padding">/</div>
-                <div class="Join">Join</div>
+                <div class="Join"><a th:href="@{/member/register}">Join</a></div>
                 <div class="padding">/</div>
                 <div class="Mypage">마이페이지</div>
             </div>
