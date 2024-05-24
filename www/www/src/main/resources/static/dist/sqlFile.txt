@@ -1,49 +1,25 @@
-boot DB 설정
+-- user : springUser
+-- password : mysql
+-- db : petdb
 
-create table board(
-bno bigint auto_increment,
-title varchar(200) not null,
-writer varchar(200) not null,
-content text not null,
-reg_at datetime default now(),
-mod_at datetime default now(),
-primary key(bno));
+-- create database
+create database 'petdb';
 
----
+-- create user
+create user 'springUser'@'localhost' identified by 'mysql';
 
-file table
-create table file(
-uuid varchar(256) not null,
-save_dir varchar(256) not null,
-file_name varchar(256) not null,
-file_type int(1) default 0,
-bno bigint not null,
-file_size bigint not null,
-reg_at datetime default now(),
-primary key(uuid));
+grant all privileges on petdb.* to 'springUser'@'localhost';
 
-member table
+-- create member table
 create table member(
-email varchar(200) not null,
+id varchar(30) not null,
 pwd varchar(256) not null,
-nick_name varchar(100),
+name varchar(30),
+tell varchar(30),
+address varchar(100),
 reg_at datetime default now(),
-last_login datetime,
-primary key(email));
+up_at datetime default now(),
+primary key(id));
 
-auth_member table
-create table auth_member(
-email varchar(200) not null,
-auth varchar(100) not null,
-foreign key (email) references
-member(email));
 
-comment table
-create table comment(
-cno bigint auto_increment,
-bno bigint not null,
-writer varchar(200) not null,
-content text not null,
-reg_at datetime default now(),
-mod_at datetime default now(),
-primary key(cno));
+
