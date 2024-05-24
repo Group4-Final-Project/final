@@ -24,13 +24,13 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
             </div>
 
             <div class="Logo">
-                <img th:src="@{/dist/image/petMainLogo.jpg}" alt="No image">
+                <a href="/"><img th:src="@{/dist/image/petMainLogo.jpg}" alt="No image"></a>
             </div>
 
             <div class="group">
-                <div class="Login">Login</div>
+                <div class="Login"><a th:href="@{/member/login}">Login</a></div>
                 <div class="padding">/</div>
-                <div class="Join">Join</div>
+                <div class="Join"><a th:href="@{/member/registerpolicy}">Join</a></div>
                 <div class="padding">/</div>
                 <div class="Mypage">마이페이지</div>
             </div>
