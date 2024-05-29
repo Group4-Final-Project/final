@@ -23,3 +23,12 @@ primary key(id));
 
 
 
+--2024-05-29
+
+ create table(
+     no int auto_increment,
+     title varchar(256) not null,
+     writer varchar(256) not null,
+     reg_date datetime default now(),
+     primary key(no));
+
