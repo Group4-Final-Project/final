@@ -5,21 +5,30 @@
     display: flex;
     flex-direction: column;
 }
-.qna_container>form>.qnapage{
+.qna_container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.qna_container > form > .qnapage {
     text-align: center;
 }
-.qna_container>form>.qnapage>span{
+
+.qna_container > form > .qnapage > span {
     font-size: 20px;
     font-weight: 700;
     color: #0dcaf0;
 }
-.qna_container >form> .menu {
+
+.qna_container > form > .menu {
     text-align: center;
     font-size: 20px;
     font-weight: 500;
 }
 
-.qna_container > form>.menu > ul > li {
+.qna_container > form > .menu > ul > li {
     display: inline-block;
     margin: 10px;
 }
@@ -29,27 +38,31 @@
     width: 90vw;
     border: 1px solid black;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin: 0 auto 20px; /* 테이블 중앙 정렬을 위해 추가 */
+}
+
+.qna_container > form > table thead {
+    text-align: center;
+    background-color: #f1f1f1; /* 헤더 배경색 추가 */
 }
 
 .qna_container > form > table thead > tr,
 .qna_container > form > table tbody > tr {
     border-bottom: 1px solid black;
-    line-height: 15px;
 }
 
-.qna_container > form > table th {
-    text-align: center;
-    height: 30px;
-    vertical-align: middle;
-}
-
+.qna_container > form > table th,
 .qna_container > form > table td {
     text-align: center;
-    background-color: lightgray;
     height: 30px;
     vertical-align: middle;
+    padding: 5px; /* 셀 내용물의 여백 추가 */
 }
+
+.qna_container > form > table tbody > tr:nth-child(even) {
+    background-color: lightgray; /* 짝수 행 배경색 추가 */
+}
+
 /*qna 리스트 부분 끝*/
 
 /*search_box 부분*/
@@ -86,7 +99,7 @@
 /*search_box 끝*/
 
 /* .writing_button 클래스에 대한 스타일 */
-.qna_container > form > a >.writing_button {
+.qna_container > form > a > .writing_button {
     background-color: #0f5132;
     color: white;
     padding: 5px 10px;
@@ -96,6 +109,6 @@
 }
 
 /* .writing_button 클래스에 호버할 때의 스타일 */
-.qna_container > form > a >.writing_button:hover {
+.qna_container > form > a > .writing_button:hover {
     background-color: #0d452a;
 }

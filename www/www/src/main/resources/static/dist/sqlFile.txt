@@ -25,7 +25,7 @@ primary key(id));
 
 --2024-05-29
 
- create table(
+ create table community(
      no int auto_increment,
      title varchar(256) not null,
      writer varchar(256) not null,

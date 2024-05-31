@@ -15,7 +15,7 @@ public class testcontroller {
 
    private final testService tsv;
 
-   @GetMapping("/information")
+   @GetMapping("/teacher")
    public String information(){
       return "teacher";
    }
