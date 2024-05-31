@@ -28,7 +28,6 @@ alter table member add birth_y varchar(20);
 alter table member add birth_m varchar(20);
 alter table member add birth_d varchar(20);
 
-
 -- create auth_member table & foreign key setting
 create table auth_member(
 id varchar(30) not null,
@@ -37,3 +36,11 @@ foreign key(id) references member(id));
 
 -- 관리자 권한 부여
 insert into auth_member values('11', 'ROLE_ADMIN');
+
+--글쓰기 등록
+ create table community(
+ no int auto_increment,
+ title varchar(256) not null,
+ writer varchar(256) not null,
+ reg_date datetime default now(),
+ primary key(no));
