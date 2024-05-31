@@ -15,10 +15,11 @@ public class testcontroller {
 
    private final testService tsv;
 
-   @GetMapping("/informaiton")
+   @GetMapping("/information")
    public String information(){
       return "information";
    }
+
    @GetMapping("/pay")
    public String pay(){
       return "pay";
