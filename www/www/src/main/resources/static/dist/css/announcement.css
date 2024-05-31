@@ -1,4 +1,4 @@
-.container {
+.an_container {
     padding: 0;
     margin: 0 auto;
     /*background-color: red;*/
@@ -146,11 +146,13 @@
     padding: 10px;
     margin: 10px 0;
 }
+
 .text_area {
     width: 100%;
     height: 6.25em;
 }
-.an_container>.bottom>button {
+
+.an_container > .bottom button {
     padding: 10px 20px;
     background-color: blue;
     color: white;

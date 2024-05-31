@@ -13,14 +13,13 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
         <link rel="stylesheet" th:href="@{/dist/css/bootstrap.min.css?after}">
         <script th:src="@{/dist/js/bootstrap.bundle.min.js}"></script>
 
+
+
         <!-- 사용자정의 -->
         <link rel="stylesheet" th:href="@{/dist/css/layout.css}">
-
         <link rel="stylesheet" th:href="@{/dist/css/register(policy)+login.css}">
         <link rel="stylesheet" th:href="@{/dist/css/content-top.css}"> <!-- content-top area(컨텐트 영역 탑(제목/부제) 관련) -->
         <link rel="stylesheet" th:href="@{/dist/css/mypage.css}">
-        <link rel="stylesheet" th:href="@{/dist/css/announcement.css}">
-        <link rel="stylesheet" th:href="@{/dist/css/teacher.css}">
 
         <!-- 폰트 -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,7 +91,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                 <div class="menu_list">
                     <ul>
                         <li><a th:href="@{/test/teacher}">산책</a></li>
-                        <li><a th:href="@{/test/pay}">케어서비스</a></li>
+                        <li><a th:href="@{/reservation/select-services}">케어서비스</a></li>
                         <li><a href="">훈련서비스</a></li>
                         <li><a href="">정기케어</a></li>
                         <li><a href="">스토어</a></li>
