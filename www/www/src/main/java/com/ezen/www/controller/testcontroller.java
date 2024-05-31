@@ -4,6 +4,7 @@ import com.ezen.www.service.testService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,4 +15,12 @@ public class testcontroller {
 
    private final testService tsv;
 
+   @GetMapping("/informaiton")
+   public String information(){
+      return "information";
+   }
+   @GetMapping("/pay")
+   public String pay(){
+      return "pay";
+   }
 }

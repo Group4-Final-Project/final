@@ -1,0 +1,68 @@
+/* teacher.css */
+
+.body, html{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container>h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+.container {
+    padding: 0;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.big_teacher {
+    background-color: white;
+    width: 80%;
+    text-align: center;
+    margin: 20px;
+}
+
+.mainImage img {
+    width: 50%;
+    height: auto;
+}
+
+.min_teacher {
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.teacher {
+    background-color: lightgray;
+    width: 30%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 1.66%;
+    cursor: pointer;
+}
+
+.container>.min_teacher>.teacher>.image_box>.image {
+    background-color: aqua;
+    border-radius: 8px;
+    height: 50%;
+    width: 75%;
+
+}
+.container>.min_teacher>.teacher>.image_box>.image:hover{
+    transform: scale(1.1);
+}
