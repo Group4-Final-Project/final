@@ -6,18 +6,15 @@
     height: auto;
     flex-wrap: wrap;
 }
-.nav{
-
-}
 
 /* 위에 상단바 */
-.container > .menu {
+.an_container > .menu {
     text-align: center;
     font-size: 20px;
     font-weight: 500;
 }
 
-.container > .menu > ul > li {
+.an_container > .menu > ul > li {
     display: inline-block;
     margin: 10px;
 }
@@ -25,18 +22,18 @@
 /* 상단바 끝 */
 
 /* 중간 이미지 */
-.container > .image {
+.an_container > .image {
     width: 100%;
     height: 250px;
     background-color: #3dd5f3;
     flex-wrap: wrap;
 }
 
-.container > .image > .middle_image {
+.an_container > .image > .middle_image {
     width: 100%;
     height: 300px;
 }
-.container>.middle_text{
+.an_container>.middle_text{
     color: aqua;
     text-align: center;
     margin-bottom: 50px;
@@ -46,12 +43,12 @@
 /* 중간 이미지 끝 */
 
 /* 텍스트 설정 */
-.container > .text_box {
+.an_container > .text_box {
     margin-top: 100px;
     text-align: center;
 }
 
-.container > .select {
+.an_container > .select {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -62,41 +59,41 @@
     padding: 20px;
 }
 
-.container > .select > .select1,
-.container > .select > .select2,
-.container > .select > .select3,
-.container > .select > .select4 {
+.an_container > .select > .select1,
+.an_container > .select > .select2,
+.an_container > .select > .select3,
+.an_container > .select > .select4 {
     flex: 1 1 23%;
     margin: 10px;
     box-sizing: border-box;
     text-align: center;
 }
 
-.container > .select > .select1 > .select1_image,
-.container > .select > .select2 > .select1_image,
-.container > .select > .select3 > .select1_image,
-.container > .select > .select4 > .select1_image {
+.an_container > .select > .select1 > .select1_image,
+.an_container > .select > .select2 > .select1_image,
+.an_container > .select > .select3 > .select1_image,
+.an_container > .select > .select4 > .select1_image {
     width: 100%;
     height: 200px;
 }
 
-.container > .select > .select1 > .select1_image:hover,
-.container > .select > .select2 > .select1_image:hover,
-.container > .select > .select3 > .select1_image:hover,
-.container > .select > .select4 > .select1_image:hover {
+.an_container > .select > .select1 > .select1_image:hover,
+.an_container > .select > .select2 > .select1_image:hover,
+.an_container > .select > .select3 > .select1_image:hover,
+.an_container > .select > .select4 > .select1_image:hover {
     transform: scale(1.1);
 }
 
-.container > .select > .select1 > .text_box,
-.container > .select > .select2 > .text_box,
-.container > .select > .select3 > .text_box,
-.container > .select > .select4 > .text_box {
+.an_container > .select > .select1 > .text_box,
+.an_container > .select > .select2 > .text_box,
+.an_container > .select > .select3 > .text_box,
+.an_container > .select > .select4 > .text_box {
     text-align: center;
     padding: 10px;
 }
 
 /* care 섹션 */
-.container > .care {
+.an_container > .care {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -107,25 +104,25 @@
     padding: 20px;
 }
 
-.container > .care > .text_box {
+.an_container > .care > .text_box {
     flex: 1 1 100%;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.container > .care > .text_box > p > span {
+.an_container > .care > .text_box > p > span {
     color: #0dcaf0;
     font-weight: 700;
 }
 
-.container > .care > .care_image {
+.an_container > .care > .care_image {
     flex: 1 1 45%; /* 한 줄에 두 개씩 배치 */
     margin: 10px;
     box-sizing: border-box;
     text-align: center;
 
 }
-.container>.care>.care_image>.pet_careImage{
+.an_container>.care>.care_image>.pet_careImage{
     width: 300px;
     height: 300px;
 }
@@ -133,28 +130,27 @@
 /*care 부분 끝*/
 
 /* bottom 부분 */
-.container > .bottom {
+.an_container > .bottom {
     padding: 20px;
     background-color: white;
     text-align: center;
 }
 
-.container > .bottom p {
+.an_container > .bottom p {
     margin: 10px 0;
 }
 
-.container > .bottom input,
-.container > .bottom textarea {
+.an_container > .bottom input,
+.an_container > .bottom textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
 }
-textarea {
+.text_area {
     width: 100%;
     height: 6.25em;
 }
-
-.container > .bottom button {
+.an_container>.bottom>button {
     padding: 10px 20px;
     background-color: blue;
     color: white;
