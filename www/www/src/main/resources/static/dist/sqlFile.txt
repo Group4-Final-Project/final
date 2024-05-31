@@ -21,14 +21,26 @@ reg_at datetime default now(),
 up_at datetime default now(),
 primary key(id));
 
+-- member table : isDel 칼럼 추가
+alter table member add is_del varchar(20) default 'N' not null;
+alter table member add gender varchar(20);
+alter table member add birth_y varchar(20);
+alter table member add birth_m varchar(20);
+alter table member add birth_d varchar(20);
 
+-- create auth_member table & foreign key setting
+create table auth_member(
+id varchar(30) not null,
+auth varchar(100) not null,
+foreign key(id) references member(id));
 
---2024-05-29
+-- 관리자 권한 부여
+insert into auth_member values('11', 'ROLE_ADMIN');
 
+--글쓰기 등록
  create table community(
-     no int auto_increment,
-     title varchar(256) not null,
-     writer varchar(256) not null,
-     reg_date datetime default now(),
-     primary key(no));
-
+ no int auto_increment,
+ title varchar(256) not null,
+ writer varchar(256) not null,
+ reg_date datetime default now(),
+ primary key(no));
