@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-
-<th:block th:replace="~{layout::setFragment(~{this::content})}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{layout :: setFragment(~{this::content})}">
     <th:block th:fragment="content">
         <head>
-            <link rel="stylesheet" th:href="@{/dist/css/reset.css}">
             <link rel="stylesheet" th:href="@{/dist/css/announcement.css}">
         </head>
-        <body>
-        <div class="container">
+        <div class="container an_container">
             <div class="menu">
                 <ul>
                     <li><a th:href="@{/comm/announcement}">AboutUs</a></li>
@@ -92,7 +90,6 @@
                 <button type="button" id="button">전송</button>
             </div>
         </div>
-        </body>
     </th:block>
 </th:block>
 </html>
