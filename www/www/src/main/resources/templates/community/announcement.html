@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<th:block th:replace="~{layout::setFragment(~{this::content})}">
+    <th:block th:fragment="content">
+        <head>
+            <link rel="stylesheet" th:href="@{/dist/css/reset.css}">
+            <link rel="stylesheet" th:href="@{/dist/css/announcement.css}">
+        </head>
+        <body>
+        <div class="container">
+            <div class="menu">
+                <ul>
+                    <li><a th:href="@{/comm/announcement}">AboutUs</a></li>
+                    <li><a th:href="@{/comm/qna}">Q&A</a></li>
+                    <li><a th:href="@{/static}">언론홍보 보도자료</a></li>
+                    <li><a th:href="@{/static}">반려동물 소식</a></li>
+                </ul>
+            </div>
+            <div class="image">
+                <img class="middle_image" th:src="@{/dist/image/강아지2.jpg}">
+            </div>
+            <div class="middle_text">
+                <p>안녕하세요</p>
+                <p>우리는 최고의 펫 케어 서비스입니다</p>
+                <p>잘부탁 드립니다</p>
+            </div>
+            <div class="text_box">
+                <p>최상의 서비스를 위해 최고의 실력과 인성을겸한</p>
+                <p>저희 펫VIP 매니저분들이 보호자님의 </p>
+                <p>근심과 걱정을 덜어드리겠습니다.</p>
+            </div>
+            <div class="select">
+                <div class="select1">
+                    <img class="select1_image" th:src="@{/dist/image/about1.jpg}">
+                    <div class="text_box">
+                        <h2>반려견만을 위한 전문가의 1:1맞춤 케어를 원하시는분</h2>
+                        <p>반려견의 동일한 매니저 케어를 받아야 정서적으로 더좋습니다</p>
+                    </div>
+                </div>
+                <div class="select2">
+                    <img class="select1_image" th:src="@{/dist/image/about2.jpg}">
+                    <div class="text_box">
+                        <h2>유동적인 일정때문에 미용샵 예약이 러여우신분</h2>
+                        <p>잦은 야근으로 집에 있는 우리아이 산책이나 미용및 목욕으로 걱정하시는</p>
+                        <p>분들에게 저희 브이아이펫이 도와드리겠습니다</p>
+                    </div>
+                </div>
+                <div class="select3">
+                    <img class="select1_image" th:src="@{/dist/image/about3.jpg}">
+                    <div class="text_box">
+                        <h2>외부스트레스에 민감한 노령견을 키우시는 분</h2>
+                        <p>노령견 같은 경우에는 외부요인에 의해 스트레스를 받습니다</p>
+                    </div>
+                </div>
+                <div class="select4">
+                    <img class="select1_image" th:src="@{/dist/image/about4.jpg}">
+                    <div class="text_box">
+                        <h2>전문샵을 찾기 힘든 대형견을 키우시는분</h2>
+                        <p>몸무게가 많이 나가는 대형견 부터 외부에 나가면 예민해지는 친구들</p>
+                    </div>
+                </div>
+            </div>
+            <div class="care">
+                <div class="text_box">
+                    <p>CARE PET PARE</p>
+                    <p>킨텍스 <span>케에펫페어</span></p>
+                    <p>11.19.FRI-11.21SUN</p>
+                </div>
+                <div class="care_image">
+                    <img class="pet_careImage" th:src="@{/dist/image/care1.jpg}">
+                </div>
+                <div class="care_image">
+                    <img class="pet_careImage" th:src="@{/dist/image/care2.jpg}">
+                </div>
+                <div class="care_image">
+                    <img class="pet_careImage" th:src="@{/dist/image/care3.jpg}">
+                </div>
+                <div class="care_image">
+                    <img class="pet_careImage" th:src="@{/dist/image/care4.jpg}">
+                </div>
+            </div>
+
+
+            <div class="bottom">
+                <p>Contact us</p>
+                <p>이름</p>
+                <input type="text" id="name">
+                <p>연락처</p>
+                <input type="text" id="number">
+                <p>내용</p>
+                <textarea class="text_area"></textarea>
+                <button type="button" id="button">전송</button>
+            </div>
+        </div>
+        </body>
+    </th:block>
+</th:block>
+</html>
