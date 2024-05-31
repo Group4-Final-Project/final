@@ -7,7 +7,6 @@
     flex-wrap: wrap;
 }
 
-
 /* 위에 상단바 */
 .an_container > .menu {
     text-align: center;
@@ -147,7 +146,8 @@
     padding: 10px;
     margin: 10px 0;
 }
-.text_textarea {
+
+.text_area {
     width: 100%;
     height: 6.25em;
 }
