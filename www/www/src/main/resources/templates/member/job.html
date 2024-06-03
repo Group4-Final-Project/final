@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{layout :: setFragment(~{this :: content})}">
+    <th:block th:fragment="content">
+        <link rel="stylesheet" th:href="@{/dist/css/job.css}">
+        <div class="job-section">
+            <main>
+                <div class="-job-inside">
+                    <div class="jobGap"></div>
+                    <div class="pet-manager">
+                        <div class="pet-margin" style="margin: 15px 0;">
+                            <div class="pet-padding" style="padding: 0 15px;">
+                                <div class="pet-text">
+                                    <h1 style="margin: 10px 0;">PET MANAGER</h1>
+                                    <p><br></p>
+                                    <p>펫워커 및 펫매니저를 상시 모집하고 있습니다.</p>
+                                    <p>내부 서류 검토 후, 서류전형 통과자 혹은 업무에 적합한 분께는 순차적으로 연락하고 있습니다.</p>
+                                    <p>앞으로도 많은 지원 부탁드립니다.</p>
+                                    <p>(example@naver.com를 통한 이메일 입사지원도 가능합니다.)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="jobGap2"></div>
+                    <div class="news-list">
+                        <div class="pet-padding" style="padding: 0 15px;">
+                            <div class="pet-margin" style="margin: 15px 0;">
+                                <ul class="pet-news-list">
+                                    <li><a href="">About us</a></li>
+                                    <li><a href="">Q&A</a></li>
+                                    <li><a href="">EVENT</a></li>
+                                    <li><a href="">언론홍보&보도자료&기사</a></li>
+                                    <li><a href="">반려동물 소식&뉴스</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qualification">
+                        <div class="pet-padding" style="padding: 0 15px;">
+                            <div class="pet-margin" style="margin: 15px 0;">
+                                <div class="pet-img-box"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-col">
+                        <div class="pet-padding" style="padding: 0 15px;">
+                            <div class="pet-margin" style="margin: 15px 0;">
+                                <div class="job-col-btn">
+                                    <a href="#" class="col-modal" id="col-modal">입사 지원하기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="/member/job" method="post" enctype="multipart/form-data">
+                    <div class="modal" id="myModal" tabindex="-1">
+
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-margin">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modWriter">입사지원</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-btn"></button>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" name="name">
+                                    <label for="floatingInput">이름</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingPassword" name="tell">
+                                    <label for="floatingPassword">전화번호</label>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="report"></textarea>
+                                    <label for="floatingTextarea2">간단한 자기소개</label>
+                                </div>
+                                <label>이력서 첨부</label>
+                                <div class="input-group mb-3">
+                                    <input type="file" name="files" id="files" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                </div>
+                                  <div id="fileZone"></div>
+                                  <label>사진 첨부</label>
+                                  <div class="input-group mb-3">
+                                      <input type="file" name="filesimg" id="filesimg" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                  </div>
+                                  <div id="ImgZone"></div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Close</button>
+                                    <button type="submit" class="btn btn-primary close-btn2" data-bs-dismiss="modal" id="regiModal">작성</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+
+        <script th:src="@{/dist/js/job.js}"></script>
+        <script th:src="@{/dist/js/bootstrap.bundle.min.js}"></script>
+</th:block>
+</th:block>

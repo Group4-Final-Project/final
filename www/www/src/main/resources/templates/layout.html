@@ -12,7 +12,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
         <link rel="stylesheet" th:href="@{/dist/css/header.css}">
         <link rel="stylesheet" th:href="@{/dist/css/footer.css}">
-
+        <link rel="stylesheet" th:href="@{/dist/css/index.css}">
     </head>
 
 
@@ -21,7 +21,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <header>
         <div class="maingroup">
             <div class="petMangaer">
-                펫 메니저 지원
+                <a th:href="@{/member/job}">펫 메니저 지원</a>
             </div>
 
             <div class="Logo">
@@ -37,7 +37,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
             </div>
         </div>
     </header>
-    <div class="nav">
+    <div class="nav1">
         <div class="group1">
             <ul>
                 <li><a th:href="@{/test/informaiton}">산책</a></li>
@@ -102,13 +102,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 
 
-    <script>
-        document.getElementById('logoutLink').addEventListener('click',(e)=>{
-            <!--a tag 무력화-->
-            e.preventDefault();
-            document.getElementById('logoutForm').submit();
-        })
-    </script>
+
 
 
 

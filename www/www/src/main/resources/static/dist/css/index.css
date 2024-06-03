@@ -1,0 +1,127 @@
+
+div{
+    display: block;
+}
+.index-section{
+    width: 100%;
+    border: 1px solid black;
+    /* display: block; */
+}
+.index-inside{
+    margin: 0 200px;
+    padding: 0 15px;
+}
+.index-widget{
+    margin: 15px 0;
+}
+.index-subNav{
+    text-align: center;
+    font-size: 13px;
+}
+.index-subNav>ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+}
+.index-subNav>ul>li>a{
+    flex: 1 1 50%;
+    margin: 0 12.5px;
+    padding-bottom: 5px;
+}
+.blank1{
+    height: 150px;
+    border: 1px solid black;
+}
+.line{
+    height: 30px;
+}
+.line-box{
+    margin: 15px 0;
+}
+.line-box>hr{
+    width: 30px;
+}
+.index-text{
+    height: 26px;
+    
+}
+.text-table>p{
+    margin: 0;
+}
+.more-button{
+    text-align: end;
+}
+.more-button>a{
+    font-size: 18px;
+    font-weight: 600;
+}
+.more-button>a:hover{
+    color: gray;
+    transition: 0.3s;
+}
+.owl-stage-out{
+    width: 1280px;
+}
+.owl-stage{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
+}
+.owl-item{
+    width: 412px;
+}
+.cutimg{
+    width: 368px;
+    height: 368px;
+    background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.bathimg{
+    width: 368px;
+    height: 368px;
+    background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Careimg{
+    width: 368px;
+    height: 368px;
+    background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.item-detail{
+    padding-bottom: 20px;
+    padding-top: 14px;
+}
+.shop-item{
+    padding: 0 15px;
+}
+.blank2{
+    border: 1px solid black;
+    height: 60px;
+}
+.text-fild{
+    height: 200px;
+    border: 1px solid black;
+}
+.service-btn{
+    margin-bottom: 10px;
+    padding: 8px 20px;
+    background-color: #22cc89;
+    color: white;
+    border-radius: 30px;
+}
+.service-btn:hover{
+    color: black;
+    background-color: white;
+    border: 1px solid gray;
+    transition: 0.3s;
+}
+.blank3{
+    height: 150px;
+    border: 1px solid black;
+}
