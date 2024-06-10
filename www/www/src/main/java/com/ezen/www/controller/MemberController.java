@@ -20,7 +20,7 @@ import java.util.List;
 public class MemberController {
 
     private final MemberService msv;
-    private final FileHandler fh;
+
 
     @GetMapping("/register")
     public void register(){}
@@ -32,14 +32,5 @@ public class MemberController {
     @GetMapping("/login")
     public void login(){}
 
-    @GetMapping("/job")
-    public void job(){}
 
-    @PostMapping("/job")
-    public String job(JoinFileVO joinFileVO, @RequestParam(name="files", required = false)MultipartFile files) throws IOException {
-        log.info(">>>> JoinFileVO >> {}",joinFileVO);
-        fh.saveFile(joinFileVO, files);
-
-        return "/member/job";
-    }
 }

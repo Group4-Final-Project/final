@@ -1,127 +1,266 @@
-
-div{
-    display: block;
+.main-container{
+/*  border: 1px solid black;*/
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+  grid-template-areas:
+        "slide-container slide-container slide-container"
+        ". nav-sub ."
+        ". careService-container ."
+        ". visitService-container ."
+        ". one-to-oneService ."
+        ". traningService .";
 }
-.index-section{
-    width: 100%;
-    border: 1px solid black;
-    /* display: block; */
+.main-container{
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+        "slide-container"
+        "nav-sub"
+        "careService-container"
+        "visitSerivce-container"
+        "one-to-oneService"
+        "traningService";
 }
-.index-inside{
-    margin: 0 200px;
-    padding: 0 15px;
-}
-.index-widget{
-    margin: 15px 0;
-}
-.index-subNav{
-    text-align: center;
-    font-size: 13px;
-}
-.index-subNav>ul{
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    justify-content: center;
-}
-.index-subNav>ul>li>a{
-    flex: 1 1 50%;
-    margin: 0 12.5px;
-    padding-bottom: 5px;
-}
-.blank1{
-    height: 150px;
-    border: 1px solid black;
-}
-.line{
-    height: 30px;
-}
-.line-box{
-    margin: 15px 0;
-}
-.line-box>hr{
-    width: 30px;
-}
-.index-text{
-    height: 26px;
-    
+.inside{
+  max-width: 1280px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 .text-table>p{
-    margin: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.slide-container{
+  grid-area: "slide";
+  /*border: 1px solid black;*/
+  height: 720px;
+}
+.nav-sub{
+  grid-area: "nav-sub";
+  height: 60px;
+  /*border: 1px solid black;*/
+}
+.nav-sub-menu>ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.nav-sub-menu>ul>li>a{
+  color: black;
+  padding-bottom: 5px;
+  margin: 0 12.5px;
+  font-size: 13px;
+}
+.careService-container{
+  grid-area: "careService-container";
+  /*border: 1px solid black;*/
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("/dist/image/background-img1.jpg");
 }
 .more-button{
-    text-align: end;
+  text-align: right;
 }
 .more-button>a{
-    font-size: 18px;
-    font-weight: 600;
+
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
 }
 .more-button>a:hover{
-    color: gray;
-    transition: 0.3s;
-}
-.owl-stage-out{
-    width: 1280px;
-}
-.owl-stage{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    
-}
-.owl-item{
-    width: 412px;
-}
-.cutimg{
-    width: 368px;
-    height: 368px;
-    background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.bathimg{
-    width: 368px;
-    height: 368px;
-    background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.Careimg{
-    width: 368px;
-    height: 368px;
-    background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.item-detail{
-    padding-bottom: 20px;
-    padding-top: 14px;
+  color: gray;
+  transition: 0.3s;
 }
 .shop-item{
-    padding: 0 15px;
+  padding: 0 7.5px;
+  height: auto;
 }
-.blank2{
-    border: 1px solid black;
-    height: 60px;
+.item-img>a>img{
+  width: 407px;
+  height: 407px;
 }
-.text-fild{
-    height: 200px;
-    border: 1px solid black;
+.item-detail{
+  padding-top: 14px;
+  padding-bottom: 20px;
 }
-.service-btn{
-    margin-bottom: 10px;
-    padding: 8px 20px;
-    background-color: #22cc89;
-    color: white;
-    border-radius: 30px;
+.owl-stage{
+  display: flex;
+  justify-content: center;
 }
-.service-btn:hover{
-    color: black;
-    background-color: white;
-    border: 1px solid gray;
-    transition: 0.3s;
+.service-price-button>a{
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  padding: 8px 20px;
+  margin-bottom: 10px;
+  background-color: rgb(34, 204, 137);
 }
-.blank3{
-    height: 150px;
-    border: 1px solid black;
+.service-price-button>a:hover{
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.line{
+  width: 30px;
+  margin-left: 0;
+  cursor: pointer;
+}
+.visitService-container{
+  grid-area: "visitSerivce-container";
+  /*border: 1px solid;*/
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("/dist/image/background-img2.jpg");
+}
+.visitService-container::before {
+  content: ''; /* 가상 요소에 내용을 추가합니다. */
+  position: absolute; /* 부모 요소에 대해 절대 위치로 설정합니다. */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* 검은색(Black)의 반투명한 색상 레이어 */
+}
+
+
+.text-visit1{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.request-button>a{
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: rgb(34, 204, 137);
+}
+.request-button>a:hover{
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  transition: 0.3s;
+}
+.name-text{
+  margin-bottom: 15px;
+}
+
+.name-laber{
+  display: inline-block;
+  color: #2a2a2a;
+  font-size: 18px;
+  max-width: 100%;
+  margin-bottom: 5px;
+}
+.form-text{
+  width: 100%;
+  border-color: #2a2a2a;
+  border: 1px solid #2a2a2a;
+  height: 20px;
+  padding: 6px 12px;
+  background-color: transparent;
+}
+.request-tell{
+  border-color: #2a2a2a;
+  border: 1px solid #2a2a2a;
+  height: 20px;
+  padding: 6px 12px;
+  background-color: transparent;
+}
+.request-report{
+  width: 100%;
+  border-color: #2a2a2a;
+  border: 1px solid #2a2a2a;
+  height: 50px;
+  padding: 6px 12px;
+  margin-bottom: 15px;
+  background-color: transparent;
+}
+.form-center{
+  text-align: center;
+  padding-bottom: 15px;
+}
+.form-center>a{
+  background-color: #22cc89;
+  color: white;
+  padding: 10px 32px;
+  border-radius: 30px;
+
+}
+.form-center>a:hover{
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+  transition: 0.3s;
+}
+.one-to-oneService{
+  grid-area: "one-to-oneService";
+  /*border: 1px solid black;*/
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("/dist/image/background-img1.jpg");
+}
+.marker-pointer>img{
+  width: 40px;
+}
+.traning-request-button>a{
+  color: black;
+  padding: 8px 0;
+  margin-bottom: 10px;
+}
+.traning-img-box{
+  float: right;
+}
+.traning-img-box>img{
+  width: 503px;
+  height: 613px;
+}
+
+.modal{
+  margin-left: 38%;
+}
+#Service-Modal1{
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+#Service-Modal2{
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+.index-modal-imgCut>img{
+  max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+.index-modal-imgBath>img{
+  max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+.index-modal-imgWork>img{
+  max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
 }

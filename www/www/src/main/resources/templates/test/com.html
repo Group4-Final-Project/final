@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<th:block th:replace="~{layout :: setFragment(~{this :: content})}">
+  <th:block th:fragment="content">
+
+
+
+    <div class="api-container">
+      <div class="api-title-box">
+        <div style="margin 30px 0;">
+         <h1 class="api-title">찾아오시는 길</h1>
+        </div>
+      </div>
+      <hr>
+    <div class="api-map" id="map" style="width:1087px;height:400px;"></div>
+      <div class="guide-address">
+        <div class="guide-text">
+          <span>
+            오시는길
+          </span>
+          <p>
+            서울 구로구 디지털로30길 28(마리오타워) 821호 / 세종특별시 조치원읍 세종로 2296, 3층 305호(세종창업키움센터) ※ 주차 이용가능
+          </p>
+        </div>
+      </div>
+
+      <div style="height: 40px;"></div>
+
+      <div class="guide-post">
+        <div class="guide-service">
+          <div class="guide-block">
+          <div class="pet-icon-dog">
+            <img src="/dist/image/icon-dog.png">
+          </div>
+
+          <div class="guide-service-text">
+            <div style="padding: 5px 0;">
+              <div class="text-table">
+                <p style="line-height: 2;">
+                  <span style="font-size: 16px; color: rgb(85, 85, 85);">이용가능 서비스</span>
+                </p>
+                <p style="line-height: 2;">
+                  <span style="font-size: 22px;">
+                    <strong>유치원, 호텔, 그루밍, 동물병원, 아카데미</strong>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+          <div class="guide-block">
+          <div class="pet-icon-dog">
+            <img src="/dist/image/guide-tell-icon.png">
+          </div>
+
+          <div class="guide-service-text">
+            <div style="padding: 5px 0;">
+              <div class="text-table">
+                <p style="line-height: 2;">
+                  <span style="font-size: 16px; color: rgb(85, 85, 85);">서비스 전문 상담</span>
+                </p>
+                <p style="line-height: 2;">
+                  <span style="font-size: 22px;">
+                    <strong>02-890-0788</strong>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+      <div style="height: 150px;"></div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b36c291edfffa9f5ece02fafc7b122b8"></script>
+    <script>
+      var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+          mapOption = {
+              center: new kakao.maps.LatLng(37.48197780672043, 126.89576208605807), // 지도의 중심좌표
+              level: 3 // 지도의 확대 레벨
+          };
+
+      var map = new kakao.maps.Map(mapContainer, mapOption);
+
+      // 마커가 표시될 위치입니다
+      var markerPosition  = new kakao.maps.LatLng(37.48211259302688, 126.89534922029664);
+
+      // 마커를 생성합니다
+      var marker = new kakao.maps.Marker({
+          position: markerPosition
+      });
+
+      // 마커가 지도 위에 표시되도록 설정합니다
+      marker.setMap(map);
+
+      var iwContent = '<div style="padding:5px;">PetVIP! <br> <a href="https://map.kakao.com/link/to/PetVIP!,37.48211259302688,126.89534922029664" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+          iwPosition = new kakao.maps.LatLng(37.48211259302688, 126.89534922029664); //인포윈도우 표시 위치입니다
+
+      // 인포윈도우를 생성합니다
+      var infowindow = new kakao.maps.InfoWindow({
+          position : iwPosition,
+          content : iwContent
+      });
+
+      // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+      infowindow.open(map, marker);
+    </script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=LIBRARY"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
+  </th:block>
+</th:block>

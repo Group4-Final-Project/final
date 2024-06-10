@@ -7,12 +7,14 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
         <meta charset="UTF-8">
         <title>PetCare</title>
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
         <link rel="stylesheet" th:href="@{/dist/css/bootstrap.min.css?after}">
         <script th:src="@{/dist/js/bootstrap.bundle.min.js}"></script>
 
         <link rel="stylesheet" th:href="@{/dist/css/header.css}">
         <link rel="stylesheet" th:href="@{/dist/css/footer.css}">
         <link rel="stylesheet" th:href="@{/dist/css/index.css}">
+        <link rel="stylesheet" th:href="@{/dist/css/com.css}">
     </head>
 
 
@@ -21,7 +23,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <header>
         <div class="maingroup">
             <div class="petMangaer">
-                <a th:href="@{/member/job}">펫 메니저 지원</a>
+                <a th:href="@{/joinfile/job}">펫 메니저 지원</a>
             </div>
 
             <div class="Logo">
@@ -34,6 +36,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                 <div class="Join"><a th:href="@{/member/register}">Join</a></div>
                 <div class="padding">/</div>
                 <div class="Mypage">마이페이지</div>
+                <div class="padding">/</div>
             </div>
         </div>
     </header>
@@ -44,7 +47,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                 <li><a th:href="@{/test/pay}">케어서비스</a></li>
                 <li><a href="">훈련서비스</a></li>
                 <li><a href="">정기케어</a></li>
-                <li><a href="">스토어</a></li>
+                <li><a th:href="@{/test/com}">찾아오시는 길</a></li>
                 <li><a href="">COMMUNITY</a></li>
             </ul>
         </div>

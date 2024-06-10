@@ -3,214 +3,615 @@
 <th:block th:replace="~{layout :: setFragment(~{this :: content})}">
     <th:block th:fragment="content">
         <link rel="stylesheet" th:href="@{/dist/css/slide.css}">
-        <div class="slide slide_wrap">
-            <div class="slide_item item1"></div>
-            <div class="slide_item item2"></div>
-            <div class="slide_item item3"></div>
-            <div class="slide_item item4"></div>
-            <div class="slide_item item5"></div>
-            <div class="slide_prev_button slide_button">◀</div>
-            <div class="slide_next_button slide_button">▶</div>
-            <ul class="slide_pagination"></ul>
-        </div>
-
-        <div class="index-section">
-            <main>
-                <div class="index-inside">
-                    <div style="padding: 0 15px;">
-                        <div class="index-widget">
-                            <div class="index-subNav">
-                                <ul>
-                                    <li class="index-depth"><a href="">산책</a></li>
-                                    <li class="index-depth"><a href="">캐어서비스</a></li>
-                                    <li class="index-depth"><a href="">훈련서비스</a></li>
-                                    <li class="index-depth"><a href="">정기케어</a></li>
-                                    <li class="index-depth"><a href="">스토어</a></li>
-                                    <li class="index-depth"><a href="">Community</a></li>
-                                </ul>
-                            </div>
-                        </div>
+        <div class="main-container">
+            <div class="slide-container">
+                <div class="slide slide_wrap">
+                    <div class="slide_item item1">
+                        <a href="">
+                            <img src="/dist/image/petSlide1.jpg">
+                        </a>
                     </div>
+                    <div class="slide_item item2">
+                        <a href="">
+                            <img src="/dist/image/petSlide2.jpg">
+                        </a>
+                    </div>
+                    <div class="slide_item item3">
+                        <a href="">
+                            <img src="/dist/image/petSlide3.jpg">
+                        </a>
+                    </div>
+                    <div class="slide_item item4">
+                        <a href="">
+                            <img src="/dist/image/petSlide4.jpg">
+                        </a>
+                    </div>
+                    <div class="slide_item item5">
+                        <a href="">
+                            <img src="/dist/image/petSlide5.jpg">
+                        </a>
+                    </div>
+                    <div class="slide_item item6">
+                        <a href="">
+                            <img src="/dist/image/petSlide6.jpg">
+                        </a>
+                    </div>
+                    <div class="slide_item item7">
+                        <a href="">
+                            <img src="/dist/image/petSlide7.jpg">
+                        </a>
+                    </div>
+                    <div class="slide_prev_button slide_button">◀</div>
+                    <div class="slide_next_button slide_button">▶</div>
+                    <ul class="slide_pagination"></ul>
                 </div>
-            </main>
-        </div>
-
-        <div class="index-section">
-            <main>
-                <div class="index-inside">
-                    <div class="blank1"></div>
-                    <div class="line">
-                        <div style="padding: 0 15px;">
-                            <div class="index-widget">
-                                <div class="line-box">
-                                    <hr style="border-top-width:3px; border-color:darkgoldenrod; text-align: end;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="index-text">
-                        <div style="padding: 0 15px;">
-                        <div class="text-table">
-                            <p style="text-align: left;">
-                                <span style="font-size: 20px; letter-spacing: 5px; color: rgb(204, 153, 85); font-weight: 600;">
-                                    PREMIUM
-                                </span>
-                            </p>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="index-font-text">
-                        <div style="padding: 0 15px;">
-                            <div class="font-h4">
-                                <div class="text-table">
-                                    <h4 style="text-align: left;">
-                                        <span style="color: rgb(34, 204, 137); font-size: 36px;">
-                                            <strong>반려견 케어 서비스</strong>
-                                        </span>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="index-care-text">
-                        <div style="padding: 0 15px;">
-                            <div class="index-widget">
-                                <div class="text-table">
-                                    <p style="text-align: left; line-height: 2;">
-                                        <span style="font-size: 18px;">
-                                            최상의 서비스를 위하여 필드 경력 3년이상, 회사 내부교육을
-                                        </span>
-                                    </p>
-                                    <p style="text-align: left; line-height: 2;">
-                                        <span style="font-size: 18px;">
-                                            수료한 매니저들이 방문하여 방문미용 및 케어합니다.
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="care-more">
-                        <div style="padding: 0 15px;">
-                            <div class="index-widget">
-                                <div class="more-button">
-                                    <a href="">more →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="shop-content">
-                            <div class="owl-stage-outer">
-                                <div class="owl-stage">
-                                    <div class="owl-item">
-                                    <div class="shop-item">
-                                        <a href="" class="fade-link">
-                                            <img src="/dist/image/petCut.jpg" class="cutimg">
-                                            <div class="item-detail" style="text-align: center; ">
-                                            <div class="item-pay">
-                                                <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px; display: ;">
-                                                    전체미용(전체클리핑) (기본 4kg 미만 기준/kg별 옵션 추가)
-                                                </h2>
-                                                <p class="pay" style="font-weight:; color:#4f4f4f; font-size: 15px;">
-                                                    5,2000원
-                                                </p>
-                                            </div>
-                                            </div>
-                                        </a>
+            </div>
+            <div class="nav-sub">
+                <main>
+                    <div class="inside">
+                        <div style="padding: 0 -15px; width: 1280px;">
+                            <div style="padding: 0 15px;">
+                                <div style="margin: 15px 0;">
+                                    <div class="nav-sub-menu">
+                                        <ul>
+                                            <li><a href="">산책</a></li>
+                                            <li><a href="">케어서비스</a></li>
+                                            <li><a href="">훈련서비스</a></li>
+                                            <li><a href="">정기케어</a></li>
+                                            <li><a href="">훈련서비스</a></li>
+                                            <li><a href="">Community</a></li>
+                                        </ul>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div class="careService-container">
+                <main>
+                    <div class="inside">
+                        <div style="padding: 0 -15px; width: 1280px;">
+                            <div style="height: 150px;"></div>
+                            <div class="line-box">
+                                <div style="padding: 0 15px;">
+                                    <div style="margin: 15px 0;">
+                                        <div class="line">
+                                            <hr style="border-top-width:3px; border-color:#cc9955;">
+                                        </div>
                                     </div>
-                                    <div class="owl-item">
-                                    <div class="shop-item">
-                                        <a href="" class="fade-link">
-                                            <img src="/dist/image/petBath.jpg" class="bathimg">
-                                            <div class="item-detail" style="text-align: center; ">
-                                                <div class="item-pay">
-                                                    <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px; display: ;">
-                                                        목욕(+위생미용) (기본 4kg 미만 기준/kg별 옵션 추가)
-                                                    </h2>
-                                                    <p class="pay" style="font-weight:; color:#4f4f4f; font-size: 15px;">
-                                                        45,000원
-                                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="PREMIUM-box">
+                                <div style="padding: 0 15px;">
+                                    <div class="text-table">
+                                        <p style="text-align: left;">
+                                    <span style="font-size: 20px; letter-spacing: 5px; color: rgb(204, 153, 85);">
+                                        PREMIUM
+                                    </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="care-text">
+                                <div style="padding: 0 15px;">
+                                    <div style="margin: 10px 0;">
+                                        <h4 style="text-align: left;">
+                                    <span style="color: rgb(34, 204, 137); font-size: 36px; font-weight: 700;">
+                                        <strong>반려견 케어 서비스</strong>
+                                    </span>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="care-text2">
+                                <div style="padding: 0 15px;">
+                                    <div style="margin: 15px 0;">
+                                        <div class="text-table">
+                                            <q class="text-care" style="text-align: left; line-height: 2;">
+                                                <span style="font-size: 18px;">최상의 서비스를 위하여 필드경력 3년이상, 회사 내부교육을</span>
+                                            </q> <br>
+                                            <q class="text-care" style="text-align: left; line-height: 2;">
+                                                <span style="font-size: 18px;">수료한 매니저들이 방문하여 방문미용 및 케어합니다.</span>
+                                            </q>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="more-button-box">
+                                <div style="padding: 0 15px;">
+                                    <div style="margin: 15px 0;">
+                                        <div class="more-button">
+                                            <a href="">more →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pet-care-shop">
+                                <div style="padding: 0 15px;">
+                                    <div class="owl-stage">
+                                        <div class="owl-item" style="width: 422px; margin-right: 0px;">
+                                            <div class="shop-item">
+                                                <div class="item-img">
+                                                    <a href="">
+                                                        <img src="/dist/image/petCut.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="item-detail" style="text-align: center; ">
+                                                    <a href="">
+                                                        <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px;">
+                                                            전체미용(전체클리핑) (기본 4kg 미만 기준/kg별 옵션 추가)
+                                                        </h2>
+                                                    </a>
+                                                    <div class="item-pay">
+                                                        <p style=" color:#4f4f4f; font-size: 15px;">52,000원</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </a>
-                                    </div>
-                                    </div>
-                                    <div class="owl-item">
-                                    <div class="shop-item">
-                                        <a href="" class="fade-link">
-                                            <img src="/dist/image/petCare.jpg" class="Careimg">
-                                            <div class="item-detail" style="text-align: center; ">
-                                                <div class="item-pay">
-                                                    <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px; display: ;">
-                                                        돌봄(+60분,+120분)
-                                                    </h2>
-                                                    <p class="pay" style="font-weight:; color:#4f4f4f; font-size: 15px;">
-                                                        26,000원
-                                                    </p>
+                                        </div>
+                                        <div class="owl-item" style="width: 422px; margin-right: 0px;">
+                                            <div class="shop-item">
+                                                <div class="item-img">
+                                                    <a href="">
+                                                        <img src="/dist/image/petBath.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="item-detail" style="text-align: center; ">
+                                                    <a href="">
+                                                        <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px;">
+                                                            목욕(+위생미용) (기본 4kg 미만 기준/kg별 옵션 추가)
+                                                        </h2>
+                                                    </a>
+                                                    <div class="item-pay">
+                                                        <p style=" color:#4f4f4f; font-size: 15px;">45,000원</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </a>
-                                    </div>
+                                        </div>
+                                        <div class="owl-item" style="width: 422px; margin-right: 0px;">
+                                            <div class="shop-item">
+                                                <div class="item-img">
+                                                    <a href="">
+                                                        <img src="/dist/image/petCare.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="item-detail" style="text-align: center; ">
+                                                    <a href="">
+                                                        <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px;">
+                                                            돌봄(+60분,+120분)
+                                                        </h2>
+                                                    </a>
+                                                    <div class="item-pay">
+                                                        <p style=" color:#4f4f4f; font-size: 15px;">26,000원</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                    </div>
-                    <div class="blank2"></div>
-                    <div class="text-fild">
-                        <div style="padding: 0 15px;">
-                            <div class="index-widget">
-                                <div class="text-table">
-                                    <p style="text-align: left;">
-                                        <span style="style=font-size: 20px;">
-                                            <strong>※ 서비스 가능지역</strong>
-                                        </span>
-                                    </p>
-                                    <p style="text-align: left;">
-                                        <span style="style=font-size: 18px;">
-                                            <br>
-                                        </span>
-                                    </p>
-                                    <p style="text-align: left;">
-                                        <span style="style=font-size: 18px;">
+
+                            <div style="height: 60px;"></div>
+
+                            <div class="service-address">
+                                <div style="padding: 0 15px;">
+                                    <div style="margin: 15px 0;">
+                                        <div class="text-table">
+                                            <p style="text-align: left;">
+                                                <span style="font-size: 20px; font-weight: 700; color: #4f4f4f;"><strong>※ 서비스 가능지역</strong></span>
+                                            </p>
+                                            <p>
+                                                <span style="font-size: 18px;"><br></span>
+                                            </p>
+                                            <p style="text-align: left;">
+                                        <span style="font-size: 18px; color: #4f4f4f;">
                                             서울 전 지역, 경기 일부 지역(연천, 포천, 가평, 여주, 평택,용인  등 서비스 불가),<br>
                                             인천 일부 지역(강화, 영종도 등 서비스 불가) 가능합니다.
                                         </span>
-                                    </p>
-                                    <p style="text-align: left;">
-                                        <br>
-                                    </p>
-                                    <p style="text-align: left;">
-                                        <span style="style=font-size: 18px;">
-                                            ※경기 외곽지역은 추가요금이 발생할 수 있습니다.
-                                        </span>
-                                    </p>
-                                    <p style="text-align: left;">
-                                        <br>
-                                    </p>
+                                            </p>
+                                            <p>
+                                                <span style="font-size: 18px;"><br></span>
+                                            </p>
+                                            <p>
+                                                <span style="font-size: 18px; color: #4f4f4f;">※경기 외곽지역은 추가요금이 발생할 수 있습니다.</span>
+                                            </p>
+                                            <p>
+                                                <span style="font-size: 18px;"><br></span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="service-btn-table">
-                        <div style="padding: 0 15px;">
-                            <div class="index-widget">
-                                <div class="service-btn-wrap">
-                                    <a href="" class="service-btn">서비스 가격표 보기</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blank3"></div>
 
+                            <div class="service-price-button-box">
+                                <div style="padding: 0 15px;">
+                                    <div style="margin: 15px 0;">
+                                        <div class="service-price-button">
+                                            <a class="Care-modal1">서비스 가격표보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 150px;"></div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div class="visitService-container">
+                <main>
+                    <div class="inside">
+                        <div style="padding: 0 -15px; width: 1280px;">
+                            <div class="service-visit-text">
+                                <div style="padding: 0 15px;">
+                                    <div style="height: 80px;"></div>
+                                    <div style="padding: 0 15px;">
+                                        <div style="margin: 15px 0;">
+                                            <div class="text-table">
+                                                <h1 class="text-visit1">
+                                                    <strong>
+                                                        <span style="color: rgb(34, 204, 137); font-size: 30px; font-weight: 700;">Premium Service</span>
+                                                    </strong>
+                                                </h1>
+                                                <h1 class="text-visit1">
+                                                    <strong>
+                                                        <span style="font-size: 60px; color: white;">정기 방문 서비스</span>
+                                                    </strong>
+                                                </h1>
+                                                <p style="line-height: 2;">
+                                            <span style="font-size: 18px; color: white;">
+                                                우리 아이의 지속적인 케어를 위한 견종,무게,나이,환경에
+                                            </span>
+                                                </p>
+                                                <p style="line-height: 2; padding-bottom: 15px;">
+                                            <span style="font-size: 18px; color: white;">
+                                                맞는 1:1 맞춤 미용 및 케어 서비스
+                                            </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="service-request">
+                                <div style="padding: 0 15px;">
+                                    <div style="margin: 15px 0;">
+                                        <div class="request-button">
+                                            <a href="">정기권 신청하기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="height: 80px;"></div>
+
+                            <div class="request-form">
+                                <div style="padding: 0 15px;">
+                                    <div style="margin: 15px 0;">
+                                        <form action="">
+                                            <div class="name-text">
+                                                <label for="" class="name-laber">이름</label> <br>
+                                                <input class="form-text" type="text">
+                                            </div>
+                                            <div class="name-text">
+                                                <label for="" class="name-laber">연락처</label> <br>
+                                                <input class="request-tell" type="text">
+                                            </div>
+                                            <div class="name-text">
+                                                <label for="" class="name-laber">내용</label> <br>
+                                                <textarea class="request-report" name="" id=""></textarea>
+                                            </div>
+                                            <div class="form-center">
+                                                <a href="">작성</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div class="one-to-oneService">
+                <main>
+                    <div class="inside">
+                        <div style="height: 150px;"></div>
+                        <div class="marker1">
+                            <div style="padding: 0 15px;">
+                                <div style="margin: 15px 0;">
+                                    <div class="text-table">
+                                        <p class="marker-pointer" style="text-align: center;">
+                                            <img src="/dist/image/marker1.png" alt="">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="advice-text">
+                            <div style="padding: 0 15px;">
+                                <div style="margin: 15px 0;">
+                                    <div class="text-table">
+                                        <p style="text-align: center; line-height: 2;">
+                                            <span style="font-size: 24px;">1:1 고정 매니저 배정으로</span>
+                                        </p>
+                                        <p style="text-align: center; line-height: 2;">
+                                            <span style="font-size: 24px;">우리아이의 편안한 케어를 제공합니다.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="marker2">
+                            <div style="padding: 0 15px;">
+                                <div style="margin: 15px 0;">
+                                    <div class="text-table">
+                                        <p class="marker-pointer" style="text-align: center;">
+                                            <img src="/dist/image/marker2.png" alt="">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 50px;"></div>
+
+                        <div class="more-button-box">
+                            <div style="padding: 0 15px;">
+                                <div style="margin: 15px 0;">
+                                    <div class="more-button">
+                                        <a href="">more →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="one-to-one-service">
+                            <div style="padding: 0 15px;">
+                                <div class="owl-stage">
+                                    <div class="owl-item" style="width: 422px; margin-right: 0px;">
+                                        <div class="shop-item">
+                                            <div class="item-img">
+                                                <a href="">
+                                                    <img src="/dist/image/petWork.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="item-detail" style="text-align: center; ">
+                                                <a href="">
+                                                    <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px;">
+                                                        [산책 정기권 10회](소,중형견 15kg 이하기준)
+                                                    </h2>
+                                                </a>
+                                                <div class="item-pay">
+                                                    <p style=" color:#4f4f4f; font-size: 15px;">180,000원</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 422px; margin-right: 0px;">
+                                        <div class="shop-item">
+                                            <div class="item-img">
+                                                <a href="">
+                                                    <img src="/dist/image/petCareCut.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="item-detail" style="text-align: center; ">
+                                                <a href="">
+                                                    <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px;">
+                                                        [미용 정기권 5회/10회](기본 4kg 미만 기준/kg별 옵션추가)
+                                                    </h2>
+                                                </a>
+                                                <div class="item-pay">
+                                                    <p style=" color:#4f4f4f; font-size: 15px;">260,000원</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 422px; margin-right: 0px;">
+                                        <div class="shop-item">
+                                            <div class="item-img">
+                                                <a href="">
+                                                    <img src="/dist/image/petCareBath.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="item-detail" style="text-align: center; ">
+                                                <a href="">
+                                                    <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px;">
+                                                        [목욕 정기권 5회/10회](기본 4kg 미만 기준/kg별 옵션추가)
+                                                    </h2>
+                                                </a>
+                                                <div class="item-pay">
+                                                    <p style=" color:#4f4f4f; font-size: 15px;">225,000원</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="height: 100px;"></div>
+                                <div class="service-price-button-box">
+                                    <div style="padding: 0 15px;">
+                                        <div style="margin: 15px 0;">
+                                            <div class="service-price-button" style="text-align: center; padding-bottom: 30px;">
+                                                <a class="Care-modal2">정기 서비스 가격표보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+            <div class="traningService">
+                <main>
+                    <div class="inside">
+                        <div style="padding: 0 -15px; width: 1280px;">
+                            <div style="padding: 0 15px;">
+                                <div style="height: 35px;"></div>
+                                <div class="traning-text-box" style="display: flex; justify-content: space-between;">
+                                    <div class="traning-left-box">
+                                        <div class="traning-service-h2">
+                                            <div style="padding: 0 15px;">
+                                                <div style="margin: 15px 0;">
+                                                    <div class="text-table">
+                                                        <h2 style="font-weight: 600; font-size: 50px;">
+                                                <span style="color: rgb(79,79,79);">
+                                                    1:1 맞춤 훈련서비스
+                                                </span>
+                                                        </h2>
+                                                        <p style="margin-top: 25px;">
+                                                <span style="color: rgb(79,79,79);">
+                                                문제행동 교육 부터 퍼피트레이닝까지 아이를 키우면서 힘들었던 부분들<br>
+                                                저희가 해결해 드리겠습니다.
+                                                </span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="traning-service-request">
+                                            <div style="padding: 0 15px;">
+                                                <div style="margin: 30px 0;">
+                                                    <div class="traning-request-button">
+                                                        <a href="">서비스 신청하기 →</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="traning-line">
+                                            <div style="padding: 0 15px;">
+                                                <div style="margin: 15px 0;">
+                                                    <div class="traning-line" style="width:20px; margin-left: 0;">
+                                                        <hr style="border-top-width:4px; border-color:#4f4f4f;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tranin-text1" style="margin-bottom: 30px;">
+                                            <div style="padding: 0 15px;">
+                                                <div class="text-table">
+                                                    <p>
+                                                        <strong style="font-weight: 700;">
+                                                    <span style="color: rgb(79, 79, 79);">
+                                                        문제행동 훈련
+                                                    </span>
+                                                        </strong>
+                                                    </p>
+                                                    <p>
+                                                <span style="color: rgb(79, 79, 79);">
+                                                    필드 경력  5년 이상의 베테랑 훈련사가 방문하는 서비스로 사 <br>
+                                                    회화 교육부터 문제행동 개선 훈련을 받으실 수 있습니다.
+                                                </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="tranin-text2" style="margin-bottom: 30px;">
+                                            <div style="padding: 0 15px;">
+                                                <div class="text-table">
+                                                    <p>
+                                                        <strong style="font-weight: 700;">
+                                                    <span style="color: rgb(79, 79, 79);">
+                                                        기본 예절 교육
+                                                    </span>
+                                                        </strong>
+                                                    </p>
+                                                    <p>
+                                                <span style="color: rgb(79, 79, 79);">
+                                                    강아지가 사람과 함께 살아가는데 필요한 매너 교육을<br>
+                                                    통해 젠틀하고 예의 있는 강아지로 성장시킬 수 있습니다.
+                                                </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="height: 206px;"></div>
+
+                                    </div>
+
+                                    <div class="traning-right-box">
+                                        <div class="traning-img">
+                                            <div style="padding: 0 15px;">
+                                                <div style="margin: 15px 0;">
+                                                    <div class="traning-img-box">
+                                                        <img src="/dist/image/petTraning.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </main>
+            </div>
+
+            <div class="modal" id="Service-Modal1" tabindex="-1">
+                <!-- Scrollable modal -->
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">정기 서비스 가격표</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close1"></button>
+                        </div>
+                        <div class="index-modal-imgCut">
+                            <img src="/dist/image/petModal1-imgCut.jpg">
+                        </div>
+                        <div class="index-modal-imgBath">
+                            <img src="/dist/image/petModal1-imgBath.jpg">
+                        </div>
+                        <div class="index-modal-imgWork">
+                            <img src="/dist/image/petModal1-imgWork.jpg">
+                        </div>
+                    </div>
                 </div>
-            </main>
+            </div>
+
+            <div class="modal" id="Service-Modal2" tabindex="-1">
+                <!-- Scrollable modal -->
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">정기 서비스 가격표</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close2"></button>
+                            </div>
+                            <div class="index-modal-imgCut">
+                                <img src="/dist/image/petModal2-imgCut.jpg">
+                            </div>
+                            <div class="index-modal-imgBath">
+                                <img src="/dist/image/petModal2-imgBath.jpg">
+                            </div>
+                            <div class="index-modal-imgWork">
+                                <img src="/dist/image/petModal2-imgWork.jpg">
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
         </div>
         <script th:src="@{/dist/js/slide.js}"></script>
+        <script th:src="@{/dist/js/indexModal.js}"></script>
     </th:block>
 </th:block>

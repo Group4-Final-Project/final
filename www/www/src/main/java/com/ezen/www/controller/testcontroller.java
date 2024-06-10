@@ -23,4 +23,6 @@ public class testcontroller {
    public String pay(){
       return "pay";
    }
+   @GetMapping("/com")
+   public void com(){}
 }
