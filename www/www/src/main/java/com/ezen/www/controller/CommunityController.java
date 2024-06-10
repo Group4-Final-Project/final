@@ -50,6 +50,10 @@ public class CommunityController {
         m.addAttribute("ph",ph);
         return "/community/qna";
     }
+    @GetMapping("/event")
+    public String event() {
+        return "/community/event";
+    }
 
 
 

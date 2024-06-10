@@ -1,0 +1,21 @@
+.rp_container {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    background-color: red;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.rp_container>form>.top_image{
+    background-color: #0dcaf0;
+    width: 50%;
+    height: 50px;
+    margin: auto;
+    
+}
+.rp_container>form>.review{
+    width: 100%;
+    background-color: yellow;
+    margin: auto;
+}

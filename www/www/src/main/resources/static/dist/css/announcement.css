@@ -1,62 +1,131 @@
 .an_container {
     padding: 0;
     margin: 0 auto;
-    /*background-color: red;*/
     width: 100%;
     height: auto;
     flex-wrap: wrap;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-/* 위에 상단바 */
-.an_container > .menu {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 500;
 }
-
-.an_container > .menu > ul > li {
-    display: inline-block;
-    margin: 10px;
-}
-
-/* 상단바 끝 */
 
 /* 중간 이미지 */
-.an_container > .image {
-    width: 100%;
-    height: 250px;
-    background-color: #3dd5f3;
-    flex-wrap: wrap;
-}
-
-.an_container > .image > .middle_image {
+.an_container > .middle_image {
     width: 100%;
     height: 300px;
 }
-.an_container>.middle_text{
-    color: aqua;
+
+.an_container > .log_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-bottom: 50px;
-    font-weight: 700;
+    width: 100%;
+    margin: 20px 0;
 }
 
-/* 중간 이미지 끝 */
+.an_container > .log_wrap > .log_image {
+    width: 451px;
+    height: 191px;
+    text-align: center;
+}
+
+.an_container > .log_wrap > .log_text {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.an_container > .log_wrap > .log_text > .yellow {
+    color: rgb(204, 153, 85);
+}
+
+.an_container > .log_wrap > .log_text > .green {
+    color: rgb(34, 204, 137);
+}
+
+.an_container > .middle_text {
+    color: #2a2a2a;
+    text-align: center;
+    width: 100%;
+    margin-top: 100px;
+    font-size: 20px;
+}
+
+.an_container > .middle_text > .text_image {
+    width: 30px;
+    height: 25px;
+}
+.an_container>.middle_textbox>.trust>img{
+    width: 100px;
+    height: 100px;
+}
+.an_container>.middle_textbox>.premium>img{
+    width: 100px;
+    height: 100px;
+}
+.an_container>.middle_textbox>.quality>img{
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes fadeinRight {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+.an_container > .middle_textbox {
+    animation: fadeinRight 5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+    width: 100%;
+    background-color: rgba(85, 210, 255, 0.15);
+}
+
+.an_container > .middle_textbox > .trust > p,
+.an_container > .middle_textbox > .premium > p,
+.an_container > .middle_textbox > .quality > p {
+    color: #2a2a2a;
+}
+
+.an_container > .middle_textbox > div {
+    flex: 1;
+    margin: 0 10px;
+}
 
 /* 텍스트 설정 */
 .an_container > .text_box {
     margin-top: 100px;
     text-align: center;
+    display: inline-block;
 }
-
+/*select 부분*/
 .an_container > .select {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    /*background-color: yellow;*/
     width: 100%;
     height: auto;
     padding: 20px;
+}
+.an_container>.select_wrap{
+    text-align: center;
+}
+.an_container>.select_wrap>.select_image{
+    width: 30px;
+    height: 25px;
+    margin-top: 50px;
 }
 
 .an_container > .select > .select1,
@@ -91,6 +160,7 @@
     text-align: center;
     padding: 10px;
 }
+/*select 섹션*/
 
 /* care 섹션 */
 .an_container > .care {
@@ -109,29 +179,31 @@
     text-align: center;
     margin-bottom: 20px;
 }
+.an_container > .care > .text_box > strong{
+    font-size: 50px;
+}
 
-.an_container > .care > .text_box > p > span {
-    color: #0dcaf0;
+.an_container > .care > .text_box > strong > span {
+    color: rgb(47,216,174);
     font-weight: 700;
 }
 
 .an_container > .care > .care_image {
-    flex: 1 1 45%; /* 한 줄에 두 개씩 배치 */
+    flex: 1 1 45%;
     margin: 10px;
     box-sizing: border-box;
     text-align: center;
-
 }
-.an_container>.care>.care_image>.pet_careImage{
+
+.an_container > .care > .care_image > .pet_careImage {
     width: 300px;
     height: 300px;
 }
 
-/*care 부분 끝*/
-
 /* bottom 부분 */
 .an_container > .bottom {
     padding: 20px;
+    width: 100%;
     background-color: white;
     text-align: center;
 }
