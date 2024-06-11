@@ -1,0 +1,53 @@
+
+header{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.maingroup{
+    height: 112px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 34px 0 34px;
+    padding: 0 15px 0 15px;
+}
+.maingroup>.petMangaer>a{
+    text-align: start;
+    line-height: 112px;
+    font-size: 18px;
+}
+.Logo{
+    text-align: center;
+}
+.group{
+    line-height: 112px;
+    display: flex;
+    text-align: end;
+    color: gray;
+}
+.padding{
+    padding: 0 5px 0 5px;
+}
+.nav1{
+    height: 70px;
+    align-items: center;
+}
+.group1{
+    height: 70px;
+    margin: 0 340px 0 340px;
+    padding: 0 15px 0 15px;
+}
+.nav1>.group1>ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.nav1>.group1>ul>li>a{
+    margin-left: 50px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.nav1>.group1>ul>li>a:hover{
+    color: greenyellow;
+    transition: 0.2s;
+}

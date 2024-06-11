@@ -20,4 +20,10 @@ public class testcontroller {
       return "teacher";
    }
 
+   @GetMapping("/pay")
+   public String pay(){
+      return "pay";
+   }
+   @GetMapping("/com")
+   public void com(){}
 }

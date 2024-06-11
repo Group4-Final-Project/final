@@ -1,0 +1,108 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.job-section{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  /*border: 1px solid black;*/
+}
+.job-inside{
+  padding: 0 15px;
+  /*border: 1px solid black;*/
+  width: 1195px;
+}
+.jobGap{
+  /*border: 1px solid black;*/
+  height: 80px;
+}
+.pet-text>p{
+  margin: 0;
+  line-height: 25px;
+}
+.jobGap2{
+  /*border: 1px solid black;*/
+  height: 32px;
+}
+.news-list{
+  /*border: 1px solid black;*/
+  height: 60px;
+}
+.pet-news-list{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+.pet-news-list>li>a{
+  margin: 0 12.5px;
+  padding-bottom: 5px;
+}
+.pet-img-box{
+  width: 860px;
+  height: 2342px;
+  background-image: url("/dist/image/입사지원.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.job-col{
+  /*border: 1px solid black;*/
+  height: 80px;
+  align-items: center;
+  padding-top: 15px;
+}
+.job-col-btn{
+
+  margin-bottom: -10px;
+  text-align: center;
+}
+
+.job-col-btn>a{
+
+  width: 200px;
+  height: 20px;
+  background-color: #F76E8E;
+  margin: 0 10px 10px 0;
+  font-size: 20px;
+  color: white;
+  padding: 20px 10px;
+  border-radius: 30px;
+  text-align: center;
+}
+.job-col-btn>a:hover{
+  background-color: white;
+  border: 1px solid gray;
+  color: black;
+  transition: 0.2s;
+}
+
+
+.col-modal {
+  padding: 20px 10px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.modal-dialog{
+    width: 600px;
+    height:  700px;
+}
+.modal-content{
+    padding: 10px
+}
+.modal-margin{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}

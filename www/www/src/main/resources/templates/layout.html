@@ -27,6 +27,10 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/dist/css/header.css}">
+        <link rel="stylesheet" th:href="@{/dist/css/footer.css}">
+        <link rel="stylesheet" th:href="@{/dist/css/index.css}">
+        <link rel="stylesheet" th:href="@{/dist/css/com.css}">
     </head>
 
 
@@ -37,7 +41,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                 <div class="main_group">
                     <!-- 채용 -->
                     <div class="col pet_manager">
-                        펫 매니저 지원
+                        <a th:href="@{/joinfile/job}">펫 매니저 지원</a>
                     </div>
 
                     <!-- 로고 -->
@@ -93,7 +97,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                         <li><a th:href="@{/reservation/select-services}">케어서비스</a></li>
                         <li><a href="">훈련서비스</a></li>
                         <li><a href="">정기케어</a></li>
-                        <li><a href="">스토어</a></li>
+                        <li><a href="@{/test/com}">찾아오시는 길</a></li>
                         <li><a th:href="@{/comm/announcement}">COMMUNITY</a></li>
                     </ul>
                 </div>
