@@ -23,4 +23,3 @@ btnclose2.addEventListener("click",()=>{
   modal2.style.display="none"
 });
 
-

@@ -47,32 +47,6 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                         <a th:href="@{/}"><img th:src="@{/dist/image/logo.jpg}" alt="No image"></a>
                     </div>
 
-            <div class="group">
-                <div class="Login"><a th:href="@{/member/login}">Login</a></div>
-                <div class="padding">/</div>
-                <div class="Join"><a th:href="@{/member/register}">Join</a></div>
-                <div class="padding">/</div>
-                <div class="Mypage">마이페이지</div>
-                <div class="padding">/</div>
-            </div>
-        </div>
-    </header>
-    <div class="nav1">
-        <div class="group1">
-            <ul>
-                <li><a th:href="@{/test/informaiton}">산책</a></li>
-                <li><a th:href="@{/test/pay}">케어서비스</a></li>
-                <li><a href="">훈련서비스</a></li>
-                <li><a href="">정기케어</a></li>
-                <li><a th:href="@{/test/com}">찾아오시는 길</a></li>
-                <li><a href="">COMMUNITY</a></li>
-            </ul>
-        </div>
-    </div>
-
-
-
-
                     <!-- 로그인 메뉴 -->
                     <div class="col member_group">
                         <div class="Login" sec:authorize="isAnonymous()"><a th:href="@{/member/login}">Login</a></div>
@@ -121,7 +95,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                         <li><a th:href="@{/reservation/select-services}">케어서비스</a></li>
                         <li><a href="">훈련서비스</a></li>
                         <li><a href="">정기케어</a></li>
-                        <li><a href="">스토어</a></li>
+                        <li><a th:href="@{/api/com}">찾아오는 길</a></li>
                         <li><a th:href="@{/comm/announcement}">COMMUNITY</a></li>
                     </ul>
                 </div>

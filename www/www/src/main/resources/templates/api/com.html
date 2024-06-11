@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <th:block th:replace="~{layout :: setFragment(~{this :: content})}">
   <th:block th:fragment="content">
-
+    <link rel="stylesheet" th:href="@{/dist/css/com-slide.css}">
 
 
     <div class="api-container">
@@ -12,7 +12,7 @@
         </div>
       </div>
       <hr>
-    <div class="api-map" id="map" style="width:1087px;height:400px;"></div>
+    <div class="api-map" id="map" style="width:1370px;height:500px;"></div>
       <div class="guide-address">
         <div class="guide-text">
           <span>
@@ -75,44 +75,40 @@
 
       </div>
       <div style="height: 150px;"></div>
+      <div class="text-gellary">
+        <h2>
+          <span style="color: rgb(204, 153, 85);">PETVIP | </span>
+          <span>갤러리</span>
+        </h2>
+      </div>
+      <div class="slide slide_wrap">
+        <div class="slide_item item1">
+            <img src="/dist/image/petGellary1.png">
+        </div>
+        <div class="slide_item item2">
+            <img src="/dist/image/petGellary2.png">
+        </div>
+        <div class="slide_item item3">
+            <img src="/dist/image/petGellary3.png">
+        </div>
+        <div class="slide_item item4">
+            <img src="/dist/image/petGellary4.png">
+        </div>
+        <div class="slide_item item5">
+            <img src="/dist/image/petGellary5.png">
+        </div>
+        <div class="slide_prev_button slide_button">＜</div>
+        <div class="slide_next_button slide_button">＞</div>
+        <ul class="slide_pagination"></ul>
+      </div>
     </div>
 
 
 
 
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b36c291edfffa9f5ece02fafc7b122b8"></script>
-    <script>
-      var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-          mapOption = {
-              center: new kakao.maps.LatLng(37.48197780672043, 126.89576208605807), // 지도의 중심좌표
-              level: 3 // 지도의 확대 레벨
-          };
-
-      var map = new kakao.maps.Map(mapContainer, mapOption);
-
-      // 마커가 표시될 위치입니다
-      var markerPosition  = new kakao.maps.LatLng(37.48211259302688, 126.89534922029664);
-
-      // 마커를 생성합니다
-      var marker = new kakao.maps.Marker({
-          position: markerPosition
-      });
-
-      // 마커가 지도 위에 표시되도록 설정합니다
-      marker.setMap(map);
-
-      var iwContent = '<div style="padding:5px;">PetVIP! <br> <a href="https://map.kakao.com/link/to/PetVIP!,37.48211259302688,126.89534922029664" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-          iwPosition = new kakao.maps.LatLng(37.48211259302688, 126.89534922029664); //인포윈도우 표시 위치입니다
-
-      // 인포윈도우를 생성합니다
-      var infowindow = new kakao.maps.InfoWindow({
-          position : iwPosition,
-          content : iwContent
-      });
-
-      // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-      infowindow.open(map, marker);
-    </script>
+    <script th:src="@{/dist/js/KakaoMapAPI.js}"></script>
+    <script th:src="@{/dist/js/slide.js}"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=LIBRARY"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>

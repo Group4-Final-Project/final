@@ -103,3 +103,17 @@ PW : one0305@@
 
 -- member table : oauth 칼럼 추가
 alter table member add oauth varchar(20);
+
+-- joinfile table : 구인 구직 DB
+create table joinfile(
+name varchar(10) not null,
+tell varchar(30) not null,
+report varchar(500) not null,
+uuid varchar(256) not null,
+save_dir varchar(256) not null,
+file_name varchar(256) not null,
+file_img varchar(256),
+file_type int default 0,
+file_size bigint not null,
+reg_at datetime default now(),
+primary key(name));

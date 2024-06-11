@@ -24,7 +24,7 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class FileHandler {
-    private String UP_DIR = "D:\\_Project\\_java\\_fileUpload\\";
+    private String UP_DIR = "D:\\_myProject\\_java\\_fileUpload\\";
     private final FileMapper fileMapper;
 
 

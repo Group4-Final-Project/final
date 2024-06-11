@@ -12,14 +12,14 @@
     margin: 30px 0;
 }
 .api-container>hr{
-    width: 1087px; /* 가로폭을 100%로 설정하여 가로선이 컨테이너의 가로폭을 가득 채우도록 함 */
+    width: 1370px; /* 가로폭을 100%로 설정하여 가로선이 컨테이너의 가로폭을 가득 채우도록 함 */
     margin: 30px 0; /* 위아래 여백을 추가하여 타이틀과의 간격을 조절함 */
     border: none; /* 기본적으로 적용된 테두리를 제거함 */
     border-top: 1px solid black; /* 가로선을 추가하고, 색상은 검은색으로 설정함 */
 }
 .guide-address{
     background-color: #222222;
-    width: 1087px;
+    width: 1370px;
     text-align: left;
 }
 .guide-text{
@@ -50,7 +50,7 @@
 }
 .guide-service{
     display: flex;
-    width: 1087px;
+    width: 1370px;
     flex-wrap: wrap;
     justify-content: space-around;
 }
