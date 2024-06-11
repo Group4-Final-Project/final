@@ -1,6 +1,7 @@
 package com.ezen.www.service;
 
 import com.ezen.www.domain.MemberVO;
+import org.springframework.security.core.userdetails.User;
 
 public interface MemberService {
 
@@ -15,4 +16,9 @@ public interface MemberService {
     void pwdModify(MemberVO mvo);
 
     void resign(String name);
+
+    void kakaoregister(MemberVO kakaomvo);
+
+    MemberVO findMember(String id);
+
 }

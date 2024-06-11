@@ -33,17 +33,27 @@
     width: 300px;
     height: 100%;
     line-height: 150px;
+    position: relative;
     border-right: 1px solid rgba(128, 128, 128, 0.281);
 }
-.memberInfo_area>.member_name{
-    font-size: 25px;
-    display: block;
+.memberInfo_area>.member_name>h5{
+    width: 300px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -110%);
 }
 .memberInfo_area>.purchase_amount{
-    font-size: 20px;
-    display: block;
-
+    width: 300px;
+    font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
 }
+
+
 .view_point{
     height: 100%;
     line-height: 150px;
@@ -69,7 +79,19 @@
     color: gray;
     padding: 70px;
 }
+
+
+
+/* 주문조회 관련 */
 .orderList{
     text-align: center;
 }
+
+
+/* 1:1문의 관련 */
+#ask_content{
+    width: 662.66px;
+    height: 500px;
+}
+
 

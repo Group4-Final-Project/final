@@ -4,7 +4,11 @@ import com.ezen.www.domain.MemberVO;
 import com.ezen.www.repository.MemberMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -12,6 +16,8 @@ import org.springframework.stereotype.Service;
 public class MemberServiceImpl implements MemberService{
 
     private final MemberMapper memberMapper;
+
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public int register(MemberVO mvo) {
@@ -43,5 +49,29 @@ public class MemberServiceImpl implements MemberService{
     public void resign(String name) {
         memberMapper.resign(name);
     }
+
+    @Override
+    public void kakaoregister(MemberVO kakaomvo) {
+        String encodedPwd = passwordEncoder.encode(kakaomvo.getPwd());
+        kakaomvo.setPwd(encodedPwd);
+        memberMapper.kakaoregister(kakaomvo);
+        if(kakaomvo != null){
+            memberMapper.registerKakaoAuth(kakaomvo.getId());
+        }
+
+    }
+
+
+    @Override
+    @Transactional(readOnly = true)
+    public MemberVO findMember(String id) {
+        return memberMapper.findMember(id);
+    }
+
+//    @Override
+//    public MemberVO findMember(String id) {
+//        return memberMapper.findMember(id);
+//    }
+
 
 }

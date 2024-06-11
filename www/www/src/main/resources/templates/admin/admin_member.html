@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{admin/admin_main :: setFragment(~{this :: admin})}">
+    <th:block th:fragment="admin">
+
+        <div class="row">
+            <div class="col admin_main_content">
+                <div class="col admin_main_content_title">
+                    <strong><h3>Membership Management</h3></strong>
+                </div>
+
+                    <div class="memberCount_box">
+                        <div class="memberCount" th:text="${membCount}"></div>　Members
+                    </div>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="table_trArea">
+                                <th class="table_title" scope="col">아이디</th>
+                                <th class="table_title" scope="col">이름</th>
+                                <th class="table_title" scope="col">이메일</th>
+                                <th class="table_title" scope="col">전화번호</th>
+                                <th class="table_title" scope="col">주소</th>
+                                <th class="table_title" scope="col">성별</th>
+                                <th class="table_title" scope="col">생년월일</th>
+                                <th class="table_title" scope="col">접속일시</th>
+                                <th class="table_title" scope="col">권한</th>
+                                <th class="table_title" scope="col">계정</th>
+                                <th class="table_title" scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <th:block th:each="memb:${admin_member}">
+                                <tr>
+                                    <td class="table_content adminMemberId"><input type="hidden" name="id" th:value="${memb.id}">[[${memb.id}]]</td>
+                                    <td class="table_content adminMemberName">[[${memb.name}]]</td>
+                                    <td class="table_content adminMemberEmail">[[${memb.email}]]</td>
+                                    <td class="table_content">[[${memb.tell}]]</td>
+                                    <td class="table_content adminMemberAddr">[[${memb.address}]]</td>
+                                    <td class="table_content">[[${memb.gender}]]</td>
+                                    <td class="table_content birthArea">[[${memb.birthY +". " + memb.birthM +". " + memb.birthD}]]</td>
+                                    <td class="table_content upAt">[[${memb.upAt}]]</td>
+                                    <td class="table_content" hidden="hidden">
+                                    <th:block th:each="authmemb:${memb.authList}">
+                                            <th:block th:if="${authmemb.id == memb.id}">
+                                                [[${authmemb.auth}]]
+                                            </th:block>
+                                    </th:block>
+                                    </td>
+                                    <td class="table_content adminAuth">
+                                        <th:block th:each="authmemb:${memb.authList}">
+                                            <th:block th:if="${authmemb.id == memb.id}">
+                                                <form action="/admin/ModifyAuth" method="post" class="adminAuthContainer">
+                                                    <input type="hidden" th:value="${memb.id}" name="id">
+                                                        <select id="auth" name="auth" class="adminAuthList">
+                                                            <option th:value="ROLE_ADMIN" th:selected="${authmemb.auth == 'ROLE_ADMIN'}">ROLE_ADMIN</option>
+                                                            <option th:value="ROLE_MEMB" th:selected="${authmemb.auth == 'ROLE_MEMB'}">ROLE_MEMB</option>
+                                                        </select>
+                                                    <button type="submit" class="btn btn-warning adminAuthBtn" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">권한부여</button>
+                                                </form>
+                                            </th:block>
+                                        </th:block>
+                                    </td>
+                                    <td class="table_content adminIsDel">
+                                        <form action="/admin/ManageMeber" method="post" class="adminAuthContainer">
+                                            <input type="hidden" th:value="${memb.id}" name="id">
+                                            <select id="isDel" name="isDel">
+                                                <option th:value="N" th:selected="${memb.isDel == 'N'}">ON</option>
+                                                <option th:value="Y" th:selected="${memb.isDel == 'Y'}">OFF</option>
+                                            </select>
+                                            <th:block th:if="${memb.isDel == 'N'}">
+                                                <button type="submit" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">비활성</button>
+                                            </th:block>
+                                            <th:block th:if="${memb.isDel == 'Y'}">
+                                                <button type="submit" class="btn btn-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">활성</button>
+                                            </th:block>
+                                        </form>
+                                    </td>
+                                    <td class="table_content realDelBox">
+                                        <form action="/admin/realDeleteMember" method="post" onsubmit="confirmDeletion(event)" class="realDelBox2">
+                                            <input type="hidden" th:value="${memb.id}" name="id">
+                                            <button type="submit" class="btn btn-danger realDelBtn">영구삭제</button>
+                                        </form>
+                                    </td>
+                                </tr>
+
+                            </th:block>
+                        </tbody>
+                    </table>
+
+            </div>
+        </div>
+
+
+        <script>
+            function confirmDeletion(event) {
+                var password = prompt("관리자 비밀번호를 입력하세요");
+                var correctPassword = "admin123@";
+
+                if (password !== correctPassword) {
+                    alert("비밀번호가 틀렸습니다.");
+                    event.preventDefault();
+                } else if (!confirm("정말로 사용자를 영구삭제하시겠습니까?")) {
+                    event.preventDefault();
+                }
+            }
+        </script>
+
+
+    </th:block>
+</th:block>
+

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <th:block th:replace="~{layout::setFragment(~{this::content})}">
-    <th:block th:fragment="content">
-<head>
-    <link rel="stylesheet" th:href="@{/dist/css/qna.css}">
-</head>
+<th:block th:fragment="content">
+
+
+    <head>
+        <link rel="stylesheet" th:href="@{/dist/css/qna.css}">
+    </head>
     <div class="qna_container">
     <form action="/comm/qna" method="get">
         <div class="qnapage">
@@ -44,7 +46,6 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <!--th:classappend 동적 클래스 추가-->
                 <th:block th:each="i:${#numbers.sequence(ph.StartPage,ph.endPage)}">
                     <li class="page-item" th:classappend="${ph.pgvo.pageNo == i ?'active':''}" aria-current="page">
                         <a class="page-link" th:href="@{/comm/qna(pageNo=${i},qty=${ph.pgvo.qty},type=${ph.pgvo.type},keyword=${ph.pgvo.keyword})}">[[${i}]]</a>
@@ -82,7 +83,7 @@
                 </button>
             </div>
         </div>
-        <a th:href="@{/comm/register}"><button type="button" class="writing_button">글쓰기</button></a>
+        <a th:href="@{/comm/register}" sec:authorize="hasAuthority('ROLE_ADMIN')"><button type="button" class="writing_button">글쓰기</button></a>
     </form>
     </div>
     </th:block>

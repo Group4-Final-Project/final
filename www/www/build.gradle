@@ -34,8 +34,18 @@ dependencies {
 	implementation 'org.apache.tika:tika-parsers:2.4.1'
 	implementation 'net.coobird:thumbnailator:0.4.17'
 
+
+
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+	// https://mvnrepository.com/artifact/com.google.code.gson/gson
+	implementation 'com.google.code.gson:gson:2.8.5'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+
 
 
 	compileOnly 'org.projectlombok:lombok'

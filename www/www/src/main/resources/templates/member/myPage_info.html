@@ -3,6 +3,8 @@
 <th:block th:replace="~{layout::setFragment(~{this::content})}">
     <th:block th:fragment="content">
 
+        <th:block sec:authosize="isAuthenticated()" th:with="auth=${#authentication.getPrincipal()}">
+
         <main>
             <div class="content-bg">
                 <div class="container-sm">
@@ -13,7 +15,7 @@
                                 <ul>
                                     <li><a th:href="@{/member/myPage_reserve}"><strong>주문 조회</strong></a></li>
                                     <li><a th:href="@{/member/myPage_point}"><strong>적립금</strong></a></li>
-                                    <li><a th:href="@{/member/myPageAsk}"><strong>1:1 문의</strong></a></li>
+                                    <li><a th:href="@{/member/myPage_ask}"><strong>1:1 문의</strong></a></li>
                                     <li><a th:href="@{/member/myPage_info}"><strong>내 정보</strong></a></li>
                                     <li><a data-bs-toggle="modal" data-bs-target="#staticBackdrop"><strong>회원탈퇴</strong></a></li>
 
@@ -44,18 +46,16 @@
                                                 <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6zm11.386 3.785-1.806-2.41-.776 2.413zm-3.633.004.961-2.989H4.186l.963 2.995zM5.47 5.495 8 13.366l2.532-7.876zm-1.371-.999-.78-2.422-1.818 2.425zM1.499 5.5l5.113 6.817-2.192-6.82zm7.889 6.817 5.123-6.83-2.928.002z"/>
                                             </svg>
                                         </div>
-                                        <div class="col name_area">
-                                            <!-- 이름 가져오기 -->
-                                            <span><h6>OO님　 안녕하세요.</h6></span>
-                                            <div class="purchase_amount">
-                                                <!-- 금액 가져오기 -->
-                                                구매금액 : 0 원
-                                            </div>
+                                        <div class="col memberInfo_area">
+                                            <span class="member_name"><h5>[[${auth.mvo.id}]]　님　안녕하세요</h5></span>
+                                            <span class="purchase_amount">
+                                                구매금액 : 100,000,000 원
+                                            </span>
                                         </div>
                                         <div class="col view_point">
                                             <a>
                                                 <h6>적립금</h6>
-                                                <span><strong>0 점</strong></span>
+                                                <span><strong>12456 점</strong></span>
                                             </a>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="myPage_mainContent_detail">
 
-                                    <th:block sec:authosize="isAuthenticated()" th:with="auth=${#authentication.getPrincipal()}">
+
 
                                         <form action="/member/myPage_info" method="post">
                                             <div class="sign_userinfo">
@@ -90,6 +90,11 @@
                                                     <label class="form-label"><strong>비밀번호 확인</strong></label>
                                                     <input type="password" class="form-control" name="check_pwd" id="sign_check_pwd" placeholder="************">
                                                     <div class="mismatch-message hide"><strong style="color: red;">비밀번호가 일치하지 않습니다.</strong></div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="email" class="form-label"><strong>이메일</strong></label>
+                                                    <input type="email" class="form-control" name="email" id="email" th:value="${auth.mvo.email}">
                                                 </div>
 
                                                 <div class="mb-3">
@@ -118,12 +123,6 @@
                                             </div>
                                         </form>
 
-
-
-                                    </th:block> <!-- auth~ -->
-
-
-
                                 </div>
                             </div>
                         </div>
@@ -131,8 +130,9 @@
                 </div>
             </div>
         </main>
+    </th:block> <!-- auth~ -->
 
-        <script th:src="@{/js/myPage_info.js}"></script>
+    <script th:src="@{/js/myPage_info.js}"></script>
 
     </th:block>
 </th:block>

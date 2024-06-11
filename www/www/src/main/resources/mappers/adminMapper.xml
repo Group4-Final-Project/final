@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezen.www.repository.AdminMapper">
+
+    <select id="admin_menuList" resultType="com.ezen.www.domain.MenuVO">
+        select * from menu
+    </select>
+
+    <select id="admin_memberList" resultType="com.ezen.www.domain.MemberVO">
+        select * from member
+    </select>
+
+    <select id="admin_authList" resultType="com.ezen.www.domain.AuthVO">
+        select * from auth_member
+    </select>
+
+    <update id="ModifyAuth" parameterType="java.util.Map">
+        update auth_member set auth=#{auth} where id=#{id}
+    </update>
+
+    <update id="ManageMeber" parameterType="java.util.Map">
+        update member set is_del=#{isDel} where id=#{id}
+    </update>
+
+    <delete id="authDeleteMember" parameterType="java.util.Map">
+        delete from auth_member where id=#{id}
+    </delete>
+
+    <delete id="realDeleteMember" parameterType="java.util.Map">
+        delete from member where id=#{id}
+    </delete>
+
+    <select id="getMemberCount" resultType="int">
+        select count(id) from member
+    </select>
+
+
+</mapper>

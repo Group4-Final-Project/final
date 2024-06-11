@@ -9,6 +9,7 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class MemberVO {
 
     private String id;
@@ -23,7 +24,12 @@ public class MemberVO {
     private String birthY;
     private String birthM;
     private String birthD;
-
     private List<AuthVO> authList;
+
+    private String email;
+
+    private String oauth;
+
+
 
 }

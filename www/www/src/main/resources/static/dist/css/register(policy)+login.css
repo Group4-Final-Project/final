@@ -12,11 +12,10 @@
     margin-bottom: 50px;
 }
 .loginPage{
-    height: 500px;
     padding: 50px 0;
 }
 .login_form{
-    width: 500px;
+    width: 350px;
 }
 .registerPage{
     padding: 50px 0px;
@@ -49,3 +48,41 @@
 .login_error{
     margin-top: 0 20px;
 }
+
+.login_text_line{
+    margin: 30px 0;
+    position: relative;
+    text-align: center;
+}
+.login_border{
+    position: absolute;
+    height: 1px;
+    width: 40%;
+    top: 50%;
+    border: 1px solid #e7eaee;
+}
+.right{
+    left: auto;
+    right: 0;
+}
+
+
+/* 소셜로그인 관련 */
+.socialLogin_kakao>a>img{
+    width: 100%;
+}
+
+
+
+/* 아이디/비밀번호 찾기 관련 */
+.findInfo{
+    margin-top: 20px;
+}
+.findInfoBtn{
+    font-size: 15px;
+}
+
+
+
+
+

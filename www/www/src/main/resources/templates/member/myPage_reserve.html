@@ -15,7 +15,7 @@
                                 <ul>
                                     <li><a th:href="@{/member/myPage_reserve}"><strong>주문 조회</strong></a></li>
                                     <li><a th:href="@{/member/myPage_point}"><strong>적립금</strong></a></li>
-                                    <li><a th:href="@{/member/myPageAsk}"><strong>1:1 문의</strong></a></li>
+                                    <li><a th:href="@{/member/myPage_ask}"><strong>1:1 문의</strong></a></li>
                                     <li><a th:href="@{/member/myPage_info}"><strong>내 정보</strong></a></li>
                                     <li><a data-bs-toggle="modal" data-bs-target="#staticBackdrop"><strong>회원탈퇴</strong></a></li>
 
@@ -47,17 +47,15 @@
                                             </svg>
                                         </div>
                                         <div class="col memberInfo_area">
-                                            <!-- 이름 가져오기 -->
-                                            <span class="member_name"><h6>[[${auth.mvo.id}]]　님　 안녕하세요.</h6></span>
+                                            <span class="member_name"><h5>[[${auth.mvo.id}]]　님　안녕하세요</h5></span>
                                             <span class="purchase_amount">
-                                                <!-- 금액 가져오기 -->
-                                                구매금액 : 100,000,000,000 원
+                                                구매금액 : 100,000,000 원
                                             </span>
                                         </div>
                                         <div class="col view_point">
                                             <a>
                                                 <h6>적립금</h6>
-                                                <span><strong>12584 점</strong></span>
+                                                <span><strong>12456 점</strong></span>
                                             </a>
                                         </div>
                                     </div>
@@ -87,7 +85,6 @@
         </main>
 
         </th:block>
-
 
 
     </th:block>

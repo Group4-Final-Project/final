@@ -1,13 +1,16 @@
 package com.ezen.www.repository;
 
-import com.ezen.www.domain.MenuVO;
+import com.ezen.www.domain.AuthVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 @Mapper
-public interface MenuMapper {
+public interface AuthMapper {
 
-    List<MenuVO> getMenuList();
+    List<AuthVO> getAuth(String id);
+
+
+
 
 }

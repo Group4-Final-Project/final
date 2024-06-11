@@ -17,19 +17,33 @@ public class CustomUserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        MemberVO loginMvo = memberMapper.selectId(username);
-        loginMvo.setAuthList(memberMapper.selectAuths(username));
-
-//        if(loginMvo == null){
-//            throw new UsernameNotFoundException(username);
+//        MemberVO loginMvo = memberMapper.selectId(username);
+//        loginMvo.setAuthList(memberMapper.selectAuths(username));
+//
+////        if(loginMvo == null){
+////            throw new UsernameNotFoundException(username);
+////        }
+//
+//
+//
+//
+//        if("Y".equals(loginMvo.getIsDel())){
+//            throw new UsernameNotFoundException("탈퇴한 사용자");
 //        }
-
-        if("Y".equals(loginMvo.getIsDel())){
-            throw new UsernameNotFoundException("탈퇴한 사용자");
+//
+//
+//        return new AuthMember(loginMvo);
+        try {
+            MemberVO loginMvo = memberMapper.selectId(username);
+            if ("Y".equals(loginMvo.getIsDel())) {
+                throw new UsernameNotFoundException("탈퇴한 사용자");
+            }
+            loginMvo.setAuthList(memberMapper.selectAuths(username));
+            return new AuthMember(loginMvo);
+        } catch (Exception e) {
+            log.error("예외 발생: {}", e.getMessage());
+            throw e;
         }
-
-
-        return new AuthMember(loginMvo);
     }
 
 }
