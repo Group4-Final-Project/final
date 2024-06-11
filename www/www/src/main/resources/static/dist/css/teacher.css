@@ -1,23 +1,10 @@
-/* teacher.css */
-
-.body, html{
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    background-color: red;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.container>h1 {
+.main_teacher>h1 {
     text-align: center;
     color: #333;
     margin-top: 20px;
 }
 
-.container {
+.main_teacher {
     padding: 0;
     margin: auto;
     height: 100%;
@@ -56,13 +43,13 @@
     cursor: pointer;
 }
 
-.container>.min_teacher>.teacher>.image_box>.image {
+.main_teacher>.min_teacher>.teacher>.image_box>.image {
     background-color: aqua;
     border-radius: 8px;
     height: 50%;
     width: 75%;
 
 }
-.container>.min_teacher>.teacher>.image_box>.image:hover{
+.main_teacher>.min_teacher>.teacher>.image_box>.image:hover{
     transform: scale(1.1);
 }

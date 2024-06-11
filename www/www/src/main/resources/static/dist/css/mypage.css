@@ -1,0 +1,97 @@
+.myPage_main{
+    width: 100%;
+}
+.content-titleName{
+    padding-left: 28px;
+}
+.myPage_menu{
+    padding-top: 10px;
+}
+.myPage_menu>ul>li{
+    margin-bottom: 10px;
+}
+.myPage_menu>ul>li>a:hover{
+    font-weight: bolder;
+}
+
+
+.myPage_headContent{
+    height: 150px;
+    background-color: white;
+    padding: 25px 0;
+    text-align: center;
+}
+.head_ct{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+.memb_tier{
+    line-height: 100px;
+}
+.memberInfo_area{
+    width: 300px;
+    height: 100%;
+    line-height: 150px;
+    position: relative;
+    border-right: 1px solid rgba(128, 128, 128, 0.281);
+}
+.memberInfo_area>.member_name>h5{
+    width: 300px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -110%);
+}
+.memberInfo_area>.purchase_amount{
+    width: 300px;
+    font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+
+
+.view_point{
+    height: 100%;
+    line-height: 150px;
+    position: relative;
+}
+.view_point>a>h6{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -110%);
+}
+.view_point>a>span{
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+.myPage_mainContent{
+    padding: 70px;
+}
+.myPage_mainContent_detail{
+    color: gray;
+    padding: 70px;
+}
+
+
+
+/* 주문조회 관련 */
+.orderList{
+    text-align: center;
+}
+
+
+/* 1:1문의 관련 */
+#ask_content{
+    width: 662.66px;
+    height: 500px;
+}
+
+

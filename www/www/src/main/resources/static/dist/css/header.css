@@ -22,7 +22,7 @@ header{
     margin: 0 34px 0 34px;
     padding: 0 15px 0 15px;
 }
-.maingroup>.petMangaer>a{
+.maingroup>.petMangaer{
     text-align: start;
     line-height: 112px;
     font-size: 18px;
@@ -39,7 +39,7 @@ header{
 .padding{
     padding: 0 5px 0 5px;
 }
-.nav1{
+.nav{
     height: 70px;
     align-items: center;
 }
@@ -48,17 +48,21 @@ header{
     margin: 0 340px 0 340px;
     padding: 0 15px 0 15px;
 }
-.nav1>.group1>ul{
+.nav>.group1>ul{
     list-style: none;
     display: flex;
     justify-content: center;
 }
-.nav1>.group1>ul>li>a{
+.nav>.group1>ul>li>a{
     margin-left: 50px;
     font-size: 15px;
     font-weight: 600;
 }
-.nav1>.group1>ul>li>a:hover{
+.nav>.group1>ul>li>a:hover{
     color: greenyellow;
     transition: 0.2s;
+}
+.slide{
+    border: 1px solid black;
+    height: 720px;
 }

@@ -1,0 +1,292 @@
+body{
+    font-family: "Oswald", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
+/* 컨텐츠 제목(고정) */
+.admin_main_content{
+    margin: 20px;
+}
+.admin_main_content>.admin_main_content_title{
+    margin-bottom: 20px;
+}
+.admin_main_content>.admin_main_content_title>strong>h3{
+    text-align: left;
+}
+
+
+/* ////////////////////////////////////////////////////////////// */
+/* admin_main / admin_main_index */
+/* 페이지 헤더/푸터 */
+.admin_header{
+    height: 50px;
+}
+
+
+
+/* 메뉴바(left) */
+.admin_main_container .admin_main_container_left{
+    background-color: #212b36;
+    color: #f4f6f8;
+}
+.admin_main_logo>a>img{
+    margin-top: 50px;
+    width: 150px;
+    height: 100px;
+    padding: 20px;
+}
+.admin_main_menu{
+    margin: 20px auto;
+}
+.admin_main_menu>ul{
+    padding: 0 50px;
+    margin: 0 auto;
+}
+.admin_main_menu_title{
+    text-align: left;
+    font-size: larger;
+    margin: 30px 0;
+    padding: 0;
+}
+.admin_main_menu_content{
+    padding: 0;
+    margin: 30px 30px;
+    text-align: left;
+}
+.admin_main_menu_content>a{
+    align-items: center;
+    text-align: center;
+    width: 120px;
+    height: 30px;
+    color: #919eab;
+}
+.admin_main_menu_content>a:hover{
+    border-radius: 5px;
+    color: #f4f6f8;
+    transition: 1s;
+}
+.admin_main_menu_content>a>svg{
+    margin-right: 5px;
+}
+.admin_main_menu_content_emptyArea{
+    height: 300px;
+}
+
+
+/* 컨텐츠(right) */
+.admin_main_content_header{
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(190, 190, 190, 0.541);
+}
+.onlineBtnBox{
+    width: 70px;
+}
+.onlineBtnBox>.onlineBtn{
+    height: 15px;
+    width: 15px;
+}
+.admin_main_content_top{
+    width: 180px;
+    text-align: center;
+    align-items: center;
+    padding: 0;
+}
+.admin_main_content_top>h6{
+    width: 150px;
+    margin: 0;
+}
+.admin_main_content_top>h6>strong{
+    font-size: 20px;
+}
+.time_div{
+    width: 150px;
+    text-align: center;
+}
+.time_div>.time_container{
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+}
+.admin-main_content_top_right{
+    width: 150px;
+    text-align: center;
+    align-items: center;
+}
+
+/* admin_main_index area */
+.right_content_top{
+    height: 300px;
+    align-items: center;
+    text-align: center;
+}
+.right_content_top>.right_content_top_container2{
+    padding: 30px;
+}
+.right_content_top>.right_content_top_container2>.right_content_top_container_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.right_content_top>.right_content_top_container2>.right_content_top_container_box>.right_content_top_box{
+    width: 300px;
+    height: 150px;
+    border: 1px solid rgba(190, 190, 190, 0.541);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #4444444b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.right_content_top_box_top_left{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.right_content_top_box_content{
+    height: 50px;
+    line-height: 50px;
+}
+.bc_title{
+    text-align: left;
+    align-items: center;
+    font-size: 18px;
+}
+.bc_content{
+    text-align: right;
+    padding-right: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.admin_main_content_graph{
+    height: 400px;
+    margin: 20px;
+}
+.admin_main_content_graph_title{
+    margin-bottom: 20px;
+}
+.admin_main_content_graph_title>strong>h3{
+    text-align: left;
+}
+.admin_main_content_recentTransaction{
+    margin: 20px;
+}
+.admin_main_content_recentTransaction_title{
+    margin-bottom: 20px;
+}
+.admin_main_content_recentTransaction_title>strong>h3{
+    text-align: left;
+}
+
+.menu_info{
+    margin: 20px;
+}
+.menu_title{
+    padding: 0;
+    margin-bottom: 20px;
+}
+.menu_title>strong>h3{
+    text-align: left;
+}
+.menu_list{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    padding: 0;
+}
+.menu_detail{
+    width: 300px;
+    border: 0.5px solid rgba(194, 194, 194, 0.432);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #444;
+    padding: 30px;
+}
+.menu_detail>img{
+    width: 250px;
+    height: 150px;
+    line-height: 150px;
+}
+.menu_detail>.menuList_box{
+    height: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.menu_detail>.menuList_box>span{
+    height: 30px;
+    line-height: 30px;
+}
+.menu_detail>.menuList_box>.admin_product{
+    border: none;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* ////////////////////////////////////////////////////////////// */
+/* admin_member */
+.memberCount_box{
+    height: 50px;
+    line-height: 50px;
+    text-align: right;
+    padding-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.memberCount_box>.memberCount{
+    display: inline-block;
+}
+.birthArea{
+    width: 100px;
+}
+.upAt{
+    width: 100px;
+}
+.adminMemberName{
+    width: 70px;   
+}
+.adminMemberId{
+    width: 120px;
+}
+.adminMemberAddr{
+    width: 200px;
+}
+.adminMemberEmail{
+    width: 150px;
+}
+.table_title{
+    vertical-align: middle;
+}
+.table_content{
+    height: 15px;
+    vertical-align: middle;
+}
+.table_content>form>select{
+    font-size: 15px;
+    border: none;
+    margin-bottom: 5px;
+}
+.adminIsDel{
+    width: 80px;
+}
+.adminAuth{
+    width: 130px;
+}
+
