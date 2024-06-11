@@ -23,23 +23,23 @@
                 </div>
             </div>
 
-
-
             <!-- content-main 영역 -->
             <div class="container-sm">
                 <div class="container main_teacher">
                     <h1>펫 케어 전문가님들을 소개합니다</h1>
                     <div class="big_teacher" id="big_teacher">
-                        <div class="mainImage" id="mainImage">
+                        <a th:href="@{/rev/reviewPage?tno=1}">
+                            <div class="mainImage" id="mainImage">
                             <!-- 클릭한 이미지가 이곳에 크게 표시됩니다 -->
-                        </div>
+                            </div>
+                        </a>
                         <p id="text"></p>
                         <p>선생님을 선택해보세요<p>
                     </div>
                     <div class="min_teacher">
-                        <div class="teacher" onclick="showBigImage('/dist/image/강아지3.jpg', '안녕하세요 저는 누구입니다<br>저의 경력은 강아지 키우기 몇년<br>고양이 키우기 몇년 입니다<br>당신의 소중한 가족 저한테 맡겨주세요')">
+                        <div class="teacher" onclick="showBigImage('/dist/image/강아지2.jpg', '안녕하세요 저는 누구입니다<br>저의 경력은 강아지 키우기 몇년<br>고양이 키우기 몇년 입니다<br>당신의 소중한 가족 저한테 맡겨주세요')">
                             <div class="image_box">
-                                <img class="image" th:src="@{/dist/image/강아지3.jpg}">
+                                <img class="image" th:src="@{/dist/image/강아지2.jpg}">
                             </div>
                             <div class="text_box">
                                 <p>안녕하세요 저는 누구입니다</p>
@@ -48,20 +48,20 @@
                                 <p>당신의 소중한 가족 저한테 맡겨주세요</p>
                             </div>
                         </div>
-                        <div class="teacher" onclick="showBigImage('/dist/image/강아지3.jpg', '안녕하세요 저는 누구입니다<br>저의 경력은 강아지 키우기 몇년<br>고양이 키우기 몇년 입니다<br>당신의 소중한 가족 저한테 맡겨주세요')">
+                        <div class="teacher" onclick="showBigImage('/dist/image/강아지3.jpg', 'ASdafasdfasdfasdf누구입니다<br>저의 경력은 강아지 키우기 5년<br>고양이 키우기 몇년 입니다<br>당신의 소중한 가족 저한테 맡겨주세요')">
                             <div class="image_box">
                                 <img class="image" th:src="@{/dist/image/강아지3.jpg}">
                             </div>
                             <div class="text_box">
                                 <p>ASdafasdfasdfasdf누구입니다</p>
-                                <p>저의 경력은 강아지 키우기 몇년</p>
+                                <p>저의 경력은 강아지 키우기 5년</p>
                                 <p>고양이 키우기 몇년 입니다</p>
                                 <p>당신의 소중한 가족 저한테 맡겨주세요</p>
                             </div>
                         </div>
-                        <div class="teacher" onclick="showBigImage('/dist/image/강아지3.jpg', '안녕하세요 저는 누구입니다<br>저의 경력은 강아지 키우기 몇년<br>고양이 키우기 몇년 입니다<br>당신의 소중한 가족 저한테 맡겨주세요')">
+                        <div class="teacher" onclick="showBigImage('/dist/image/서울.jpg', '안녕하세요 저는 누구입니다<br>저의 경력은 강아지 키우기 몇년<br>고양이 키우기 몇년 입니다<br>당신의 소중한 가족 저한테 맡겨주세요')">
                             <div class="image_box">
-                                <img class="image" th:src="@{/dist/image/강아지3.jpg}">
+                                <img class="image" th:src="@{/dist/image/서울.jpg}">
                             </div>
                             <div class="text_box">
                                 <p>안a력은 강아지 키우기 몇년</p>

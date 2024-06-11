@@ -9,10 +9,11 @@
     margin: auto;
     height: 100%;
     width: 100%;
-    background-color: red;
+    /*background-color: red;*/
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+
 }
 
 .big_teacher {
@@ -21,21 +22,25 @@
     text-align: center;
     margin: 20px;
 }
-
-.mainImage img {
-    width: 50%;
-    height: auto;
+.text_box{
+    margin-top: 15px;
 }
 
+.mainImage img {
+    width: 100%;
+    height: 300px;
+}
+
+
 .min_teacher {
-    background-color: aqua;
+    /*background-color: aqua;*/
     width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
 
 .teacher {
-    background-color: lightgray;
+    /*background-color: lightgray;*/
     width: 30%;
     box-sizing: border-box;
     padding: 10px;
@@ -46,8 +51,8 @@
 .main_teacher>.min_teacher>.teacher>.image_box>.image {
     background-color: aqua;
     border-radius: 8px;
-    height: 50%;
-    width: 75%;
+    height: 300px;
+    width: 300px;
 
 }
 .main_teacher>.min_teacher>.teacher>.image_box>.image:hover{

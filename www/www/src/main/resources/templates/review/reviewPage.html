@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{layout :: setFragment(~{this::content})}">
+    <th:block th:fragment="content">
+        <link rel="stylesheet" th:href="@{/dist/css/reviewPage.css}">
+        <div class="rp_container">
+            <form>
+                <div class="top_image">
+                    <div class="test_image">
+                        <img th:src="@{|/dist/image/${tvo.image}|}">
+                    </div>
+                </div>
+                <div class="review">
+                    댓글 들어갈곳
+                    <!--comment 등록 라인-->
+                    <!--post라인-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="cmtWriter">anymore</span>
+                        <br>
+                        <input type="text" id="cmtText" class="form-control" placeholder="Add Comment..."
+                               aria-label="Username" aria-describedby="basic-addon1">
+                        <button type="button" id="cmtAddBtn" class="btn btn-secondary">post</button>
+                    </div>
+                    <!--spred 라인-->
+                    <!-- 댓글 목록 영역 -->
+                    <ul class="list-group list-group-flush" id="cmtListArea">
+                        <li class="list-group-item">
+                            <div class="fw-bold writer">Writer</div>
+                            <div class="content">content</div>
+                            <span class="badge rounded-pill text-bg-warning">regDate</span>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <script th:src="@{/js/reviewPage.js}"></script>
+    </th:block>
+</th:block>
+</html>

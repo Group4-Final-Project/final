@@ -21,13 +21,12 @@ reg_at datetime default now(),
 up_at datetime default now(),
 primary key(id));
 
--- member table : 칼럼 추가
+-- member table : isDel 칼럼 추가
 alter table member add is_del varchar(20) default 'N' not null;
 alter table member add gender varchar(20);
 alter table member add birth_y varchar(20);
 alter table member add birth_m varchar(20);
 alter table member add birth_d varchar(20);
-
 
 -- create auth_member table & foreign key setting
 create table auth_member(
@@ -84,7 +83,7 @@ insert into menu(me_code, name, size, price) values
 (5, "목욕", "중형", 62000),
 (6, "목욕", "대형", 72000);
 
--- 옵션 데이터 추가
+--옵션 데이터 추가
 insert into options(op_code, name, price) values
 (1,"소형",1000),
 (2,"중형",2000),
@@ -103,3 +102,22 @@ PW : one0305@@
 
 -- member table : oauth 칼럼 추가
 alter table member add oauth varchar(20);
+
+-- teacher table
+create table teacher (
+tno int auto_increment,
+name varchar(100) not null,
+image varchar(255) not null,
+primary key (tno)
+);
+
+-- comment table
+create table comment (
+cno int auto_increment,
+tno int int not null
+id varchar(100) not null
+content varchar(1000) not null,
+reg_date datetime default now(),
+primary key (cno)
+);
+
