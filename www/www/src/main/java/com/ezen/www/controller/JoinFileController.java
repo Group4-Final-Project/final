@@ -27,9 +27,10 @@ public class JoinFileController {
     public void job(){}
 
     @PostMapping("/job")
-    public String job(JoinFileVO joinFileVO, @RequestParam(name="files", required = false) MultipartFile files) throws IOException {
-        log.info(">>>> JoinFileVO >> {}",joinFileVO);
-        fh.saveFile(joinFileVO, files);
+    public String job(JoinFileVO joinFileVO, @RequestParam(name="files", required = false) MultipartFile files,
+                      @RequestParam(name="filesimg", required = false) MultipartFile filesimg) throws IOException {
+        log.info(">>>> JoinFileVO >> {}", joinFileVO);
+        fh.saveFile(joinFileVO, files, filesimg);
 
         return "/joinfile/job";
     }
