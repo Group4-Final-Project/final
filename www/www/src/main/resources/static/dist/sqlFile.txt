@@ -2,10 +2,10 @@
 -- password : mysql
 -- db : petdb
 
--- create database
+-- create database : petdb
 create database 'petdb';
 
--- create user
+-- create user : springUser
 create user 'springUser'@'localhost' identified by 'mysql';
 
 grant all privileges on petdb.* to 'springUser'@'localhost';
@@ -37,13 +37,14 @@ foreign key(id) references member(id));
 -- 관리자 권한 부여
 insert into auth_member values('11', 'ROLE_ADMIN');
 
---글쓰기 등록
-create table community(
-no int auto_increment,
-title varchar(256) not null,
-writer varchar(256) not null,
+-- qna table ------------------------------------------------------------- 변경
+create table qna(
+qno int auto_increment,
+title varchar(100) not null,
+writer varchar(30) not null,
+content varchar(256) not null,
 reg_date datetime default now(),
-primary key(no));
+primary key(qno));
 
 -- 메뉴
 CREATE TABLE menu(

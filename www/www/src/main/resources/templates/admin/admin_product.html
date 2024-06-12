@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{admin/admin_main :: setFragment(~{this :: admin})}">
+    <th:block th:fragment="admin">
+
+        <div class="row">
+            <div class="col admin_main_content">
+                <div class="col admin_main_content_title">
+                    <strong><h3>Product Management</h3></strong>
+                </div>
+
+                <!-- inner_content area -->
+                <div class="container-sm ">
+
+                    <div class="GoTOPage">
+                        <a th:href="@{/reservation/select-services}"><button class="btn btn-success btn-sm">MOVE PRODUCT(SERVICE PAGE)</button></a>
+                    </div>
+
+                    <div class="product_management_container">
+                        <div class="qnaRegister_Subtitle">
+                            <h4>Menu/Options Management</h4>
+                        </div>
+
+                        <!-- 상품검색(상품분류 : 메뉴/옵션별, 상품명/상품코드 검색) -->
+                        <div class="row product_search_container">
+                            <div class="col">
+                                상품검색
+                            </div>
+                        </div>
+
+                        <!-- 상품목록 / 수정 -->
+                        <div class="row">
+                            <div class="col">
+                                <div>
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
+                                </div>
+                            </div>
+                            <div class="col">NO.</div>
+                            <div class="col">상품분류(메뉴/옵션)</div>
+                            <div class="col">상품코드</div>
+                            <div class="col">상품사진</div>
+                            <div class="col">상품명</div>
+                            <div class="col">상품가격</div>
+                            <div class="col">판매량</div>
+                            <div class="col">관리</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div>
+                                    <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                                </div>
+                            </div>
+                            <div class="col">1</div>
+                            <div class="col">옵션</div>
+                            <div class="col">2937400</div>
+                            <div class="col">사진없음</div>
+                            <div class="col">크기 : 대형견 </div>
+                            <div class="col">160,000원</div>
+                            <div class="col">56 회</div>
+                            <div class="col">
+                                <button type="button" class="btn btn-secondary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                    수정
+                                </button>
+                                <button type="button" class="btn btn-secondary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                    삭제
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </th:block>
+</th:block>

@@ -45,14 +45,13 @@
 /* subtitle 관련 */
 .content-top>.content-top_list{
     height: 15%;
-    background-color: darkolivegreen;
 }
 
 .content-top>.content-top_list>ul{
     padding: 0;
     margin: 0;
-    height: 100%;
-    line-height: 75px;
+    height: 100px;
+    line-height: 100px;
     text-align: center;
     box-sizing: border-box;
 }
@@ -63,7 +62,6 @@
 }
 
 .content-top>.content-top_list>ul>li>a{
-    color: white;
     font-size: 20px;
 }
 

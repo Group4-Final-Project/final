@@ -36,5 +36,8 @@
         select count(id) from member
     </select>
 
+    <insert id="qna_register">
+        insert into qna(title, writer, content) values(#{title}, #{writer}, #{content})
+    </insert>
 
 </mapper>

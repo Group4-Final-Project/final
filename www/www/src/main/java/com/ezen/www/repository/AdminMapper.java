@@ -3,6 +3,7 @@ package com.ezen.www.repository;
 
 import com.ezen.www.domain.MemberVO;
 import com.ezen.www.domain.MenuVO;
+import com.ezen.www.domain.QnaVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -24,4 +25,7 @@ public interface AdminMapper {
     void realDeleteMember(Map<String, Object> realDeleteMember);
 
     int getMemberCount(MemberVO memberVO);
+
+    void qna_register(QnaVO qvo);
+
 }

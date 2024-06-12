@@ -14,7 +14,7 @@ a{
     text-decoration: none;
 }
 .layout_minwidth{
-    min-width: 1280px;
+    min-width: 800px;
 }
 .hide{
     display: none;

@@ -2,9 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <th:block th:replace="~{layout::setFragment(~{this::content})}">
     <th:block th:fragment="content">
+
         <head>
             <link rel="stylesheet" th:href="@{/dist/css/qna.css}">
         </head>
+
         <div class="content-top">
             <div class="content-top_image" style="background-image: url(../dist/image/petvip.png)">
                 <div class="content-top_title">
@@ -13,85 +15,48 @@
             </div>
             <div class="content-top_list">
                 <ul>
-                    <li>
-                        <a th:href="@{/comm/announcement}"><strong>AboutUs</strong></a>
-                    </li>
-                    <li>
-                        <a th:href="@{/comm/qna}"><strong>Q&A</strong></a>
-                    </li>
-                    <li>
-                        <a th:href="@{/comm/event}"><strong>EVENT</strong></a>
-                    </li>
+                    <li><a th:href="@{/community/announcement}"><strong>About Us</strong></a></li>
+                    <li><a th:href="@{/community/qna}"><strong>Q&A</strong></a></li>
+                    <li><a th:href="@{/community/event}"><strong>EVENT</strong></a></li>
                 </ul>
             </div>
         </div>
-        <div class="qna_container">
-            <form action="/comm/qna" method="get">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>no</th>
-                        <th>제목</th>
-                        <th>글쓴이</th>
-                        <th>작성시간</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="cvo:${qna}">
-                        <td>[[${cvo.no}]]</td>
-                        <td>[[${cvo.title}]]</td>
-                        <td>[[${cvo.writer}]]</td>
-                        <td>[[${cvo.regDate}]]</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li th:if="${ph.prev}"  class="page-item">
-                            <a class="page-link" th:href="@{/comm/qna(pageNo=${ph.startPage-1},qty=${ph.pgvo.qty},type=${ph.pgvo.type},keyword=${ph.pgvo.keyword})}" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <!--th:classappend 동적 클래스 추가-->
-                        <th:block th:each="i:${#numbers.sequence(ph.StartPage,ph.endPage)}">
-                            <li class="page-item" th:classappend="${ph.pgvo.pageNo == i ?'active':''}" aria-current="page">
-                                <a class="page-link" th:href="@{/comm/qna(pageNo=${i},qty=${ph.pgvo.qty},type=${ph.pgvo.type},keyword=${ph.pgvo.keyword})}">[[${i}]]</a>
-                            </li>
-                        </th:block>
-                        <li th:if="${ph.next}" class="page-item">
-                            <a class="page-link" th:href="@{/comm/qna(pageNo=${ph.endPage+1},qty=${ph.pgvo.qty},type=${ph.pgvo.type},keyword=${ph.pgvo.keyword})}" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="row align-items-center">
-                    <div class="col-12 col-sm-4">
-                        <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-                        <select class="form-select" name="type" id="inlineFormSelectPref">
-                            <option th:selected="${ph.pgvo.type == null ? 'true' : 'false'}">Choose...</option>
-                            <option th:value="t" th:selected="${ph.pgvo.type == 't' ? 'true' : 'false'}">제목</option>
-                            <option th:value="w" th:selected="${ph.pgvo.type == 'w' ? 'true' : 'false'}">작성자</option>
-                            <option th:value="tw" th:selected="${ph.pgvo.type == 'tw' ? 'true' : 'false'}">전부</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-sm-4">
-                        <input type="text" name="keyword" th:value="${ph.pgvo.keyword }" class="form-control" placeholder="search...">
-                        <input type="hidden" name="pageNo" th:value="1">
-                        <input type="hidden" name="qty" th:value="10">
-                    </div>
-                    <div class="col-12 col-sm-4">
-                        <button type="submit" class="btn btn-primary position-relative badge rounded-pill text-bg-success ">
-                            search
-                            <span th:text="${ph.totalCount}" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
 
-                <span class="visually-hidden">unread messages</span>
-                            </span>
-                        </button>
-                    </div>
+        <div class="container-sm">
+            <div class="qna_box">
+                <div class="sub-title">
+                    <div>자주 하시는 질문(Q&A) 외에 1:1문의(글쓰기)이 가능합니다. 궁금한 사항은 하단에 "글쓰기"탭을 이용해 주세요 :)</div>
+                    <div>카카오채널 "petvip"대화를 통한 상담도 진행하고 있습니다.</div>
                 </div>
-                <a th:href="@{/comm/register}"><button type="button" class="writing_button">글쓰기</button></a>
-            </form>
+
+                <div class="qna_listBox">
+                    <form action="/comm/qna" method="get">
+                        <th:block th:each="qna, no:${qna}">
+                            <div class="accordion accordion-flush" th:id="'accordionFlushExample' + ${no.index}">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header qna_titleArea" th:id="'flush-heading' + ${no.index}">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" th:data-bs-target="'#flush-collapse' + ${no.index}" aria-expanded="false" th:aria-controls="'flush-collapse' + ${no.index}">
+                                            <h4 class="QnaListIcon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bookmark-star" viewBox="0 0 16 16">
+                                                <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.18.18 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.18.18 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.18.18 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.18.18 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.18.18 0 0 0 .134-.098z"/>
+                                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                                            </svg>　　</h4><strong>[[${qna.title}]]</strong>
+                                        </button>
+                                    </h2>
+                                    <div th:id="'flush-collapse' + ${no.index}" class="accordion-collapse collapse" th:data-bs-parent="'#accordionFlushExample' + ${no.index}">
+                                        <div class="accordion-body qna_contentArea">
+                                            <span>
+                                                [[${qna.content}]]
+                                            </span>
+                                        </div>
+                                        <div class="qna_regDate">관리자　[[${qna.regDate}]]</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </th:block>
+                    </form>
+                </div>
+            </div>
         </div>
     </th:block>
 </th:block>

@@ -7,9 +7,10 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class CommunityVO {
-    private int no;
+public class QnaVO {
+    private int qno;
     private String title;
     private String writer;
+    private String content;
     private String regDate;
 }

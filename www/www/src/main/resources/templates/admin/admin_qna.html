@@ -10,14 +10,104 @@
                     <strong><h3>QnA Management</h3></strong>
                 </div>
 
+                <div class="container-sm ">
 
+                    <div class="GoTOPage">
+                        <a th:href="@{/community/qna}"><button class="btn btn-success btn-sm">MOVE Q&A(SERVICE PAGE)</button></a>
+                    </div>
 
+                <div class="qna_registerBox">
+                    <div class="qnaRegister_Subtitle">
+                        <h4>Q&A Register</h4>
+                    </div>
+                    <form action="/admin/qna_register" method="post" class="qna_registerBoxForm">
+                        <div class="row mb-3">
+                            <label for="writer" class="col-sm-2 col-form-label"><strong>아이디</strong></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="writer" id="writer" th:value="관리자">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="title" class="col-sm-2 col-form-label"><strong>제목</strong></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해주세요.">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="content" class="col-sm-2 col-form-label"><strong>내용</strong></label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control qna_content" name="content" id="content" placeholder="내용을 입력해주세요."></textarea>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end qna_btnBox">
+                            <button type="submit" class="btn btn-secondary" id="admin_qnaRegBtn">글쓰기</button>
+                        </div>
+                    </form>
+                </div>
+                </div>
 
+                <!-- qna 리스트 미리보기 -->
+                <div class="container-sm qnaListContainer">
+                    <div class="qnaListBox">
+                        <div class="qnaList_Subtitle">
+                            <h4>Q&A Preview/Modify</h4>
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">NO.</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">TITLE</th>
+                                <th scope="col">CONTENT</th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+
+                            <th:block th:each="qnaList, no:${qnaList}">
+                                <form action="/admin/modifyQna" method="post">
+                                    <tr class="qnaListLine">
+                                        <th scope="row">
+                                            <input type="text" class="qnaListInput" th:value="${no.index+1}" readonly="readonly">
+                                            <input type="text" class="qnaListInput" name="qno" th:value="${qnaList.qno}" hidden="hidden">
+                                        </th>
+                                        <td>
+                                            <input type="text" class="qnaListInput" name="writer" th:value="${qnaList.writer}" readonly="readonly">
+                                        </td>
+                                        <td>
+                                            <a class="" data-bs-toggle="collapse" th:href="'#collapseTitle' + ${no.index}" role="button" aria-expanded="false" th:aria-controls="'collapseTitle' + ${no.index}">
+                                                <textarea class="qnaListInputTitle" name="title">[[${qnaList.title}]]</textarea>
+                                            </a>
+                                            <div class="collapse qnaOpenTitle" th:id="'collapseTitle' + ${no.index}">
+                                                <div class="card card-body">
+                                                    [[${qnaList.title}]]
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a data-bs-toggle="collapse" th:href="'#collapseContent' + ${no.index}" role="button" aria-expanded="false" th:aria-controls="'collapseContent' + ${no.index}">
+                                                <textarea class="qnaListTextarea" name="content">[[${qnaList.content}]]</textarea>
+                                            </a>
+                                            <div class="collapse qnaOpenContent" th:id="'collapseContent' + ${no.index}">
+                                                <div class="card card-body">
+                                                    [[${qnaList.content}]]
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn btn-secondary btn-sm qnaModifyBtn">수정</button>
+                                        </td>
+                                    </tr>
+                                </form>
+                            </th:block>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
+
+
+
         </div>
-
-
-
-
     </th:block>
 </th:block>

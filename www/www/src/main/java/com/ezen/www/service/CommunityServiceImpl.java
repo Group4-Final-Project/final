@@ -1,9 +1,9 @@
 package com.ezen.www.service;
 
 
-import com.ezen.www.domain.CommunityVO;
+import com.ezen.www.domain.QnaVO;
 import com.ezen.www.domain.PagingVO;
-import com.ezen.www.repository.BoardMapper;
+import com.ezen.www.repository.QnaMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,22 +12,17 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CommunityServiceImpl implements CommunityService {
-    private final BoardMapper boardMapper;
 
-
-    @Override
-    public int register(CommunityVO cvo) {
-        return boardMapper.register(cvo);
-    }
+    private final QnaMapper qnaMapper;
 
     @Override
-    public List<CommunityVO> getQna(PagingVO pgvo) {
-        return boardMapper.getQna(pgvo);
+    public List<QnaVO> getQna(PagingVO pgvo) {
+        return qnaMapper.getQna(pgvo);
     }
 
     @Override
     public int getTotalCount(PagingVO pgvo) {
-        return boardMapper.getTotalCount(pgvo);
+        return qnaMapper.getTotalCount(pgvo);
     }
 
 

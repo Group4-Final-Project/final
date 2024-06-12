@@ -1,3 +1,6 @@
+/* admin 관련 css */
+/* 페이지명으로 검색하여 해당 페이지의 css영역을 구분 */
+
 body{
     font-family: "Oswald", sans-serif;
     font-family: "Noto Sans KR", sans-serif;
@@ -7,7 +10,11 @@ a{
     text-decoration: none;
 }
 
-
+/* ////////////////////////////////////////////////////////////// */
+/* admin_main / admin_main_index */
+.layout_minwidth{
+    min-width: 800px;
+}
 /* 컨텐츠 제목(고정) */
 .admin_main_content{
     margin: 20px;
@@ -18,17 +25,10 @@ a{
 .admin_main_content>.admin_main_content_title>strong>h3{
     text-align: left;
 }
-
-
-/* ////////////////////////////////////////////////////////////// */
-/* admin_main / admin_main_index */
 /* 페이지 헤더/푸터 */
 .admin_header{
     height: 50px;
 }
-
-
-
 /* 메뉴바(left) */
 .admin_main_container .admin_main_container_left{
     background-color: #212b36;
@@ -76,8 +76,6 @@ a{
 .admin_main_menu_content_emptyArea{
     height: 300px;
 }
-
-
 /* 컨텐츠(right) */
 .admin_main_content_header{
     height: 80px;
@@ -124,7 +122,6 @@ a{
     text-align: center;
     align-items: center;
 }
-
 /* admin_main_index area */
 .right_content_top{
     height: 300px;
@@ -288,5 +285,86 @@ a{
 }
 .adminAuth{
     width: 130px;
+}
+
+
+
+
+/* ////////////////////////////////////////////////////////////// */
+/* admin_qna */
+.qna_registerBox{
+    padding: 0 30px;
+}
+.qnaRegister_Subtitle{
+    text-align: left;
+    margin: 0 10px;
+    margin-bottom: 50px;
+}
+.col-form-label{
+    width: 130px;
+}
+.qna_registerBoxForm{
+    text-align: center;
+    vertical-align: middle;
+    padding: 0 30px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.39);
+    border-radius: 5px;
+}
+.qna_content{
+    height: 300px;
+}
+.qna_btnBox{
+    margin-top: 50px;
+    margin-right: 20px;
+}
+.qnaListContainer{
+    margin-bottom: 50px;
+}
+.qnaListBox{
+    padding: 0 30px;
+}
+.qnaList_Subtitle{
+    text-align: left;
+    margin: 50px 10px;
+}
+.qnaListLine{
+    height: 80px;
+}
+.qnaListLine>th, td{
+    align-items: center;
+    vertical-align: middle;
+}
+.qnaListInput{
+    width: 50px;
+    border: none;
+}
+.qnaListInputTitle{
+    width: 300px;
+    border: 1px solid rgba(128, 128, 128, 0.219);
+    height: 26px;
+}
+.qnaOpenTitle{
+    width: 300px;
+    border: none;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+.qnaListTextarea{
+    width: 500px;
+    height: 26px;
+    border: 1px solid rgba(128, 128, 128, 0.219);
+    border-radius: 5px;
+}
+.qnaOpenContent{
+    width: 500px;
+    border: none;
+    margin: 0 auto;
+}
+.GoTOPage{
+    text-align: right;
+    padding-right: 30px;
 }
 

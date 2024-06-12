@@ -95,9 +95,7 @@ public class MemberController {
 
 
 
-
-
-    // 주문 조회
+    // 마이페이지 주문 조회
     @GetMapping("/myPage_reserve")
     public void myPage_reserve(){}
 
@@ -109,11 +107,11 @@ public class MemberController {
     @GetMapping("/admin_page")
     public void admin_page(){}
 
-    // 1:1문의
+    // 마이페이지 1:1문의
     @GetMapping("/myPage_ask")
     public void myPage_ask(){}
 
-    // 회원탈퇴
+    // 마이페이지 회원탈퇴
     @GetMapping("/myPage_resign")
     public String myPage_resign(Principal principal){
         msv.resign(principal.getName());

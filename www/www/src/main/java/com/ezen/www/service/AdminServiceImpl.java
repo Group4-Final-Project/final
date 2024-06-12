@@ -2,8 +2,10 @@ package com.ezen.www.service;
 
 import com.ezen.www.domain.MemberVO;
 import com.ezen.www.domain.MenuVO;
+import com.ezen.www.domain.QnaVO;
 import com.ezen.www.repository.AdminMapper;
 import com.ezen.www.repository.AuthMapper;
+import com.ezen.www.repository.QnaMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,7 @@ public class AdminServiceImpl implements AdminService{
 
     private final AdminMapper adminMapper;
     private final AuthMapper authMapper;
+    private final QnaMapper qnaMapper;
 
     @Override
     public List<MenuVO> admin_menuList() {
@@ -64,6 +67,21 @@ public class AdminServiceImpl implements AdminService{
         return adminMapper.getMemberCount(memberVO);
     }
 
+    @Override
+    public void qna_register(QnaVO qvo) {
+        adminMapper.qna_register(qvo);
+    }
+
+    @Override
+    public List<QnaVO> qna_list(QnaVO qnaVO) {
+        log.info("qnalist in!");
+        return qnaMapper.qna_list(qnaVO);
+    }
+
+    @Override
+    public void modifyQna(QnaVO qnaVO) {
+        qnaMapper.modifyQna(qnaVO);
+    }
 
 
 }

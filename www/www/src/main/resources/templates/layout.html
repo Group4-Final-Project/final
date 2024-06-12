@@ -6,19 +6,20 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PetCare</title>
+        <title>PET</title>
 
         <!-- 부트스트랩 -->
         <link rel="stylesheet" th:href="@{/dist/css/reset.css}">
-        <link rel="stylesheet" th:href="@{/dist/css/bootstrap.min.css?after}">
+        <link rel="stylesheet" th:href="@{/dist/css/bootstrap.min.css}">
         <script th:src="@{/dist/js/bootstrap.bundle.min.js}"></script>
-
 
         <!-- 사용자정의 -->
         <link rel="stylesheet" th:href="@{/dist/css/layout.css}">
         <link rel="stylesheet" th:href="@{/dist/css/register(policy)+login.css}">
         <link rel="stylesheet" th:href="@{/dist/css/content-top.css}"> <!-- content-top area(컨텐트 영역 탑(제목/부제) 관련) -->
         <link rel="stylesheet" th:href="@{/dist/css/mypage.css}">
+        <link rel="stylesheet" th:href="@{/dist/css/index.css}">
+        <link rel="stylesheet" th:href="@{/dist/css/com.css}">
 
         <!-- 폰트 -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,28 +28,23 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" th:href="@{/dist/css/header.css}">
-        <link rel="stylesheet" th:href="@{/dist/css/footer.css}">
-        <link rel="stylesheet" th:href="@{/dist/css/index.css}">
-        <link rel="stylesheet" th:href="@{/dist/css/com.css}">
     </head>
 
 
     <body class="layout_minwidth">
-        <header>
 
+        <!-- header area -->
+        <header>
             <div class="header_area">
                 <div class="main_group">
                     <!-- 채용 -->
                     <div class="col pet_manager">
                         <a th:href="@{/joinfile/job}">펫 매니저 지원</a>
                     </div>
-
                     <!-- 로고 -->
                     <div class="col Logo">
                         <a th:href="@{/}"><img th:src="@{/dist/image/logo.jpg}" alt="No image"></a>
                     </div>
-
                     <!-- 로그인 메뉴 -->
                     <div class="col member_group">
                         <div class="Login" sec:authorize="isAnonymous()"><a th:href="@{/member/login}">Login</a></div>
@@ -60,7 +56,6 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                             <a id="logoutLink" th:href="@{/}">Logout</a>
                             <form action="/member/logout" method="post" id="logoutForm"></form>
                         </div>
-
                         <div class="subIcon_area">
                             <!-- 관리자 페이지 -->
                             <div class="admin_page" sec:authorize="hasAuthority('ROLE_ADMIN')">
@@ -95,23 +90,23 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                     <ul>
                         <li><a th:href="@{/test/teacher}">산책</a></li>
                         <li><a th:href="@{/reservation/select-services}">케어서비스</a></li>
-                        <li><a href="">훈련서비스</a></li>
-                        <li><a href="">정기케어</a></li>
-                        <li><a href="@{/test/com}">찾아오시는 길</a></li>
-                        <li><a th:href="@{/comm/announcement}">COMMUNITY</a></li>
+                        <li><a th:href="@{/}">훈련서비스</a></li>
+                        <li><a th:href="@{/}">정기케어</a></li>
+                        <li><a th:href="@{/test/com}">찾아오시는 길</a></li>
+                        <li><a th:href="@{/community/announcement}">COMMUNITY</a></li>
                     </ul>
                 </div>
             </div>
         </header>
 
 
-        <!-- section line -->
+        <!-- main_section area -->
         <section>
             <th:block th:replace="${content}"></th:block>
         </section>
 
 
-        <!-- footer line -->
+        <!-- footer area -->
         <footer>
             <div class="footer-container">
                 <div class="container-sm">

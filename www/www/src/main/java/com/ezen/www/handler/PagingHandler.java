@@ -1,6 +1,6 @@
 package com.ezen.www.handler;
 
-import com.ezen.www.domain.CommunityVO;
+import com.ezen.www.domain.QnaVO;
 import com.ezen.www.domain.PagingVO;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +18,7 @@ public class PagingHandler {
 
  private int totalCount;
  private PagingVO pgvo;
- private List<CommunityVO> qnaList;
+ private List<QnaVO> qnaList;
 
  public PagingHandler(PagingVO pgvo,int totalCount){
      this.pgvo=pgvo;
@@ -33,7 +33,7 @@ public class PagingHandler {
      this.prev=this.startPage>1;
      this.next=this.endPage<realEndPage;
  }
-    public PagingHandler(PagingVO pgvo, int totalCount,List<CommunityVO> qnaList){
+    public PagingHandler(PagingVO pgvo, int totalCount,List<QnaVO> qnaList){
         this(pgvo,totalCount);
         this.qnaList=qnaList;
     }
