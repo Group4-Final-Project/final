@@ -12,4 +12,5 @@ public class CommunityVO {
     private String title;
     private String writer;
     private String regDate;
+
 }

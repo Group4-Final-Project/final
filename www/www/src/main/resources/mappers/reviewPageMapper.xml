@@ -5,11 +5,34 @@
 <mapper namespace="com.ezen.www.repository.ReviewPageMapper">
 
     <insert id="post">
-        insert into(teacher,writer,content)
-        values(#{teacher},#{writer},#{content})
+        insert into comment (tno, writer, content)
+        values (#{tno}, #{writer}, #{content})
     </insert>
+
     <select id="detail" resultType="com.ezen.www.domain.TeacherVO">
-        select*from teacher where tno=#{tno}
+        select * from teacher where tno = #{tno}
     </select>
+
+    <select id="getComments" resultType="com.ezen.www.domain.CommentVO">
+        select c.*, t.name as teacherName
+        from comment c
+        left join teacher t on c.tno = t.tno
+        where c.tno = #{tno}
+        order by c.reg_date desc
+    </select>
+
+    <select id="getAllTeachers" resultType="com.ezen.www.domain.TeacherVO">
+        select * from teacher
+    </select>
+
+    <delete id="delete">
+        delete from comment where cno = #{cno}
+    </delete>
+
+    <update id="update">
+        update comment
+        set content = #{content}
+        where cno = #{cno}
+    </update>
 
 </mapper>

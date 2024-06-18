@@ -98,7 +98,7 @@ create table teacher (
     tno int auto_increment,
     name varchar(100) not null,
     image varchar(255) not null,
-    primary key (tno)
+    primary key (tno));
 );
 
 --코멘트 테이브
@@ -108,6 +108,6 @@ create table comment (
     id varchar(100) not null
     content varchar(1000) not null,
     reg_date datetime default now(),
-    primary key (cno)
+    primary key (cno));
 );
 
