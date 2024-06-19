@@ -1,0 +1,55 @@
+.notandum-p-text>p{
+    margin: 0;
+    padding: 0;
+}
+#idx-text>p{
+    margin: 0;
+    padding: 0;
+}
+.service-region>p{
+    margin: 0;
+    padding: 0;
+}
+.serviceCare-reservation-text{
+    flex-direction: column;
+}
+#serviceDetail-text>p{
+    margin: 0;
+    padding: 0;
+}
+.select-buy-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.select-reservation-btn{
+    background-color: #4f4f4f;
+    border-color: #4f4f4f;
+    color: white;
+    border-width: 0;
+    width: 160px;
+    height: 45px;
+    border-radius: 30px;
+}
+.select-reservation-btn:hover{
+    background-color: #2a2a2a;
+    transition: 0.3s;
+}
+.select-add-btn{
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(170, 170, 170);
+    width: 160px;
+    height: 45px;
+    border-radius: 30px;
+}
+.select-add-btn:hover{
+    border-color: black;
+    transition: 0.3s;
+}
+.deleteButton{
+    line-height: 24px;
+    margin-bottom: 7px;
+}

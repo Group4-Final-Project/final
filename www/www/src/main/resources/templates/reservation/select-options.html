@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
 <th:block th:replace="~{layout::setFragment(~{this::content})}">
     <th:block th:fragment="content">
+        <link rel="stylesheet" th:href="@{/dist/css/select-options.css}">
         <div class="container-sm">
             <!--제목-->
             <div class="row">
-                <h1>Select Option</h1>
+                <h5><span style="color: rgb(170, 170, 170);">Home > 케어서비스 ></span> <span id="option-title"></span></h5>
             </div>
             <!---->
             <!--메인-->
             <div class="row">
                 <!--왼쪽 사진-->
-                <div class="col">
-
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="owl-item-img">
+                        <img class="item-img" src="" style="width: 610px; height: 610px;">
+                    </div>
                 </div>
                 <!---->
                 <!--셀렉트-->
-                <div class="col">
+                <div class="col-md-6 col-sm-12 col-xs-12">
                     <h3 id="idx-display"></h3>
                     <hr>
+                    <div id="idx-text"></div>
                     <form action="/reservation/booking" method="get">
                         <p>기본사항*</p>
                         <select class="form-select" id="size" aria-label="Default select example">
                             <option value="크기 (필수)" selected>크기 (필수)</option>
-                            <option th:each="op : ${options}" th:value="${op.price}" th:text="${op.size}"></option>
+                            <option value="1">소형</option>
+                            <option value="2">중형</option>
+                            <option value="3">대형</option>
                         </select>
                         <hr>
                         <p>추가사항</p>
@@ -48,8 +55,10 @@
                         </select>
                         <hr>
                         <div id="result"></div>
-                        <button type="submit" onclick="location.href='#'">예약</button>
-                        <button type="submit" onclick="location.href='#'">담기</button>
+                        <div class="select-buy-btn">
+                        <button class="select-reservation-btn" type="submit" onclick="location.href='#'">예약하기</button>
+                        <button class="select-add-btn" type="submit" onclick="location.href='#'">담기</button>
+                        </div>
                     </form>
                 </div>
                 <!---->
@@ -57,96 +66,37 @@
                 <div class="row">
                     <h1>상세정보 / 구매평</h1>
                     <hr>
+                    <div class="service-region">
+                        <h3 style="margin: 0px 0px 3px; padding: 0px; font-weight: 600; font-size: 18px;">
+                            [서비스가능 지역]
+                        </h3>
+                        <p><span style="font-size: 16px;">* 서울전지역</span></p>
+                        <p><span style="font-size: 16px;">* 경기 일부지역(연천,포천,가평,여주,평택,용인 등 서비스불가)</span></p>
+                        <p><span style="font-size: 16px;">* 인천일부지역(강화,영종도 등 서비스불가)</span></p>
+                        <br>
+                        <p><span style="font-size: 16px;">※ 경기 외곽지역 및 그 외 지역은 추가요금이 발생할 수 있습니다.</span></p>
+                    </div>
+                    <br>
+                    <div style="height: 70px"></div>
+                    <div class="serviceCare-reservation-text container text-center" th:if="${param.idx != 8}">
+                        <h2>결제 후 바로 <strong>'예약대기'</strong> 상태가 됩니다.</h2>
+                        <h2>착오 없으시길 바랍니다.</h2>
+                        <br>
+                        <h3>※ 매니저 매칭후 자세한 일정 및 서비스 안내차 개별 연락 드린후 <br> <strong>'예약확정'</strong>이 됩니다.</h3>
+                    </div>
+                    <div class="container text-center">
+                        <img class="ServiceCareDetail-img" src="" alt="">
+                    </div>
+                    <div style="height: 80px;"></div>
+                    <div id="serviceDetail-text"></div>
                 </div>
                 <!---->
             </div>
             <!---->
         </div>
         <!--스크립트-->
-        <script>
-            document.getElementById('size').addEventListener('change', updateResult);
-            document.getElementById('fur').addEventListener('change', updateResult);
-            document.getElementById('aggression').addEventListener('change', updateResult);
-            document.getElementById('temporary').addEventListener('change', updateResult);
-
-            function updateResult(event) {
-                const select = event.target;
-                const label = select.options[0].textContent;
-                const selected = select.selectedOptions[0].textContent;
-                const value = select.value;
-
-                // Update result div with the new selection
-                const resultDiv = document.getElementById('result');
-                const existingBox = document.querySelector(`#result .${select.id}-box`);
-
-                if (value !== label) {
-                    if (existingBox) {
-                        existingBox.querySelector('span').textContent = `${label}: ${selected}: ${value}`;
-                    } else {
-                        resultDiv.appendChild(createResultBox(label, value, selected, select.id));
-                    }
-                }
-
-                // Reset the select box to the default option
-                select.value = label;
-            }
-
-            function createResultBox(label, value, selected, selectId) {
-                const box = document.createElement('div');
-                box.classList.add(`${selectId}-box`);
-                box.style.border = '1px solid #ccc';
-                box.style.padding = '10px';
-                box.style.margin = '5px';
-                box.style.display = 'flex';
-                box.style.justifyContent = 'space-between';
-                box.style.alignItems = 'center';
-
-                const text = document.createElement('span');
-                text.textContent = `${label}: ${selected}: ${value}`;
-
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = '삭제';
-                deleteButton.style.marginLeft = '10px';
-                deleteButton.onclick = () => box.remove();
-
-                box.appendChild(text);
-                box.appendChild(deleteButton);
-
-                return box;
-            }
-
-            // 쿼리스트링 값을 특정 이름의 파라미터로 받기
-            function getQueryParam(param) {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(param);
-            }
-
-            // idx 쿼리 파라미터에 따라 h3의 내용과 temp의 html을 바꾸기
-            window.onload = function() {
-                const idx = getQueryParam('idx');
-                const idxDisplay = document.getElementById('idx-display');
-                const idxHtml = document.getElementById('temporary');
-
-                if (idx === '1') {
-                    idxDisplay.textContent = '미용 (소형견 기준/옵션 추가)';
-                    idxHtml.innerHTML = `
-                        <option value="부분스타일 (선택)" selected>부분스타일 (선택)</option>
-                        <option value="4">얼굴</option>
-                        <option value="5">귀</option>
-                        <option value="6">발</option>
-                        <option value="7">꼬리</option>
-                    `;
-                } else if (idx === '2') {
-                    idxDisplay.textContent = '목욕 (소형견 기준/옵션 추가)';
-                    idxHtml.innerHTML = `
-                        <option value="머드팩 (선택)" selected>머드팩 (선택)</option>
-                        <option value="1">소형</option>
-                        <option value="2">중형</option>
-                        <option value="3">대형</option>
-                    `;
-                }
-            }
-        </script>
+        <script th:src="@{/dist/js/select-options.js}"></script>
+        <script th:src="@{/dist/js/select-options-right-text.js}"></script>
 
     </th:block>
 </th:block>

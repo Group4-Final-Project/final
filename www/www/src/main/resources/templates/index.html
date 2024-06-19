@@ -2,12 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <th:block th:replace="~{layout :: setFragment(~{this :: content})}">
     <th:block th:fragment="content">
+        <link rel="stylesheet" th:href="@{/dist/css/index.css}">
         <link rel="stylesheet" th:href="@{/dist/css/slide.css}">
         <div class="main-container">
             <div class="slide-container">
                 <div class="slide slide_wrap">
                     <div class="slide_item item1">
-                        <a href="">
+                        <a th:href="@{/reservation/select-services}">
                             <img src="/dist/image/petSlide1.jpg">
                         </a>
                     </div>
@@ -22,7 +23,7 @@
                         </a>
                     </div>
                     <div class="slide_item item4">
-                        <a href="">
+                        <a th:href="@{/reservation/select-services}">
                             <img src="/dist/image/petSlide4.jpg">
                         </a>
                     </div>
@@ -55,7 +56,7 @@
                                     <div class="nav-sub-menu">
                                         <ul>
                                             <li><a href="">산책</a></li>
-                                            <li><a href="">케어서비스</a></li>
+                                            <li><a th:href="@{/reservation/select-services}">케어서비스</a></li>
                                             <li><a href="">훈련서비스</a></li>
                                             <li><a href="">정기케어</a></li>
                                             <li><a href="">스토어</a></li>
@@ -126,7 +127,7 @@
                                 <div style="padding: 0 15px;">
                                     <div style="margin: 15px 0;">
                                         <div class="more-button">
-                                            <a href="">more →</a>
+                                            <a th:href="@{/reservation/select-services}">more →</a>
                                         </div>
                                     </div>
                                 </div>
@@ -138,12 +139,12 @@
                                         <div class="owl-item" style="width: 422px; margin-right: 0px;">
                                             <div class="shop-item">
                                                 <div class="item-img">
-                                                    <a href="">
+                                                    <a th:href="@{/reservation/select-services}">
                                                         <img src="/dist/image/petCut.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="item-detail" style="text-align: center; ">
-                                                    <a href="">
+                                                    <a th:href="@{/reservation/select-services}">
                                                         <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px;">
                                                             전체미용(전체클리핑) (기본 4kg 미만 기준/kg별 옵션 추가)
                                                         </h2>
@@ -157,12 +158,12 @@
                                         <div class="owl-item" style="width: 422px; margin-right: 0px;">
                                             <div class="shop-item">
                                                 <div class="item-img">
-                                                    <a href="">
+                                                    <a th:href="@{/reservation/select-services}">
                                                         <img src="/dist/image/petBath.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="item-detail" style="text-align: center; ">
-                                                    <a href="">
+                                                    <a th:href="@{/reservation/select-services}">
                                                         <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px;">
                                                             목욕(+위생미용) (기본 4kg 미만 기준/kg별 옵션 추가)
                                                         </h2>
@@ -176,12 +177,12 @@
                                         <div class="owl-item" style="width: 422px; margin-right: 0px;">
                                             <div class="shop-item">
                                                 <div class="item-img">
-                                                    <a href="">
+                                                    <a th:href="@{/reservation/select-services}">
                                                         <img src="/dist/image/petCare.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="item-detail" style="text-align: center; ">
-                                                    <a href="">
+                                                    <a th:href="@{/reservation/select-services}">
                                                         <h2 style="margin-bottom: 0.3em; font-weight: bold; color: #4f4f4f; font-size: 18px;">
                                                             돌봄(+60분,+120분)
                                                         </h2>

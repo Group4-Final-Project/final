@@ -19,7 +19,7 @@ body{
 
     /* size */
     width: 1000px;
-    height: 730px;
+    height: 600px;
 
     /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
     user-select: none;
@@ -36,7 +36,7 @@ body{
 
     /* size */
     width: 1000px;
-    height: 730px;
+    height: 600px;
 
     /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
     flex-shrink: 0;
@@ -44,6 +44,20 @@ body{
     /* transition */
     transition: left 0.15s;
   }
+  .slide_item_container {
+    display: flex;
+    overflow: hidden; /* 내부 그림자가 넘치는 것을 방지하기 위해 overflow를 숨김으로 설정 */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* 내부 그림자 효과 */
+}
+
+.slide_item {
+    flex: 0 0 100%; /* 슬라이드 아이템이 가로로 정렬되도록 설정 */
+}
+
+.slide_item img {
+    width: 100%; /* 이미지가 컨테이너에 꽉 차게 설정 */
+    height: auto;
+}
   .slide_item>img{
     max-width: 100%;
     max-height: 100%;

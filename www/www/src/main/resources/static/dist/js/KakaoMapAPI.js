@@ -29,3 +29,45 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
       // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
       infowindow.open(map, marker);
+
+      var ctrlPressed = false;
+      var cursorOnMap = false;
+
+      function setZoomable(zoomable) {
+          map.setZoomable(zoomable);
+      }
+
+      function handleWheel(event) {
+          if (!ctrlPressed && cursorOnMap) {
+              event.preventDefault();
+              setZoomable(false);
+          }
+      }
+
+      function handleKeydown(event) {
+          if (event.ctrlKey) {
+              ctrlPressed = true;
+              setZoomable(true);
+          }
+      }
+
+      function handleKeyup(event) {
+          if (!event.ctrlKey) {
+              ctrlPressed = false;
+              setZoomable(false);
+          }
+      }
+
+      mapContainer.addEventListener('mouseenter', function() {
+          cursorOnMap = true;
+          setZoomable(false);
+      });
+
+      mapContainer.addEventListener('mouseleave', function() {
+          cursorOnMap = false;
+          setZoomable(false);
+      });
+
+      document.addEventListener('wheel', handleWheel);
+      document.addEventListener('keydown', handleKeydown);
+      document.addEventListener('keyup', handleKeyup);
