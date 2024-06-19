@@ -45,5 +45,14 @@ public class ReviewPageServiceImpl implements ReviewPageService{
     public int delete(int cno) {
         return reviewPageMapper.delete(cno);
     }
+    @Override
+    public int getCommentCount(int tno) {
+        return reviewPageMapper.getCommentCount(tno);
+    }
+
+    @Override
+    public double getAverageScore(int tno) {
+        return reviewPageMapper.getAverageScore(tno);
+    }
 
 }

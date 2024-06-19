@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<th:block th:replace="~{layout :: setFragment(~{this::content})}">
+<th:block th:replace="~{layout::setFragment(~{this::content})}">
     <th:block th:fragment="content">
         <link rel="stylesheet" th:href="@{/dist/css/reviewPage.css}">
         <div class="rp_container">
@@ -9,6 +9,7 @@
                 <div class="review_image" th:data-tno="${tvo.tno}">
                     <img th:src="@{|/dist/image/${tvo.image}|}" class="review_teacher">
                 </div>
+                <div class="description" id="description"></div>
             </div>
         </div>
         <div class="manager-list">
@@ -24,15 +25,24 @@
             <!-- post 라인 -->
             <div class="input-group mb-3">
                 <span class="input-group-text" id="cmtWriter">anymore</span>
-                <br>
-                <input type="text" id="cmtText" class="form-control" placeholder="Add Comment..."
+                <input type="text" id="cmtText" class="form-control comment-input" placeholder="Add Comment..."
                        aria-label="Username" aria-describedby="basic-addon1">
+                <select id="cmtScore" class="form-select score-select">
+                    <option value="1">1점</option>
+                    <option value="2">2점</option>
+                    <option value="3">3점</option>
+                    <option value="4">4점</option>
+                    <option value="5">5점</option>
+                </select>
                 <button type="button" id="cmtAddBtn" class="btn btn-secondary">post</button>
+            </div>
+            <div id="commentStats" class="mb-3">
+                <span id="commentCount"></span><span id="averageScore"></span>
+
             </div>
             <!-- spread 라인 -->
             <!-- 댓글 목록 영역 -->
             <ul class="list-group list-group-flush" id="cmtListArea">
-
             </ul>
         </div>
 
@@ -49,6 +59,16 @@
                         <div class="mb-3">
                             <label for="modifyContent" class="form-label">내용</label>
                             <textarea class="form-control" id="modifyContent" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modifyScore" class="form-label">점수</label>
+                            <select id="modifyScore" class="form-select">
+                                <option value="1">1점</option>
+                                <option value="2">2점</option>
+                                <option value="3">3점</option>
+                                <option value="4">4점</option>
+                                <option value="5">5점</option>
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer">

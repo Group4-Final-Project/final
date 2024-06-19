@@ -66,4 +66,14 @@ public class ReviewPageController {
             return "0";
         }
     }
+    @GetMapping("/commentCount")
+    @ResponseBody
+    public int getCommentCount(@RequestParam("tno") int tno) {
+        return rps.getCommentCount(tno);
+    }
+    @GetMapping("/averageScore")
+    @ResponseBody
+    public double getAverageScore(@RequestParam("tno") int tno) {
+        return rps.getAverageScore(tno);
+    }
 }

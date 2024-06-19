@@ -14,5 +14,6 @@ public class CommentVO {
     private String content;
     private String regDate;
     private String teacherName;
+    private int score;
 
 }

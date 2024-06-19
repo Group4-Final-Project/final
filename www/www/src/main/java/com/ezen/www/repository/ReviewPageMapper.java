@@ -21,4 +21,8 @@ public interface ReviewPageMapper {
     int update(CommentVO cvo);
 
     int delete(int cno);
+
+    int getCommentCount(int tno);
+
+    double getAverageScore(int tno);
 }

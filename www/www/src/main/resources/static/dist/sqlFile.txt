@@ -110,4 +110,6 @@ create table comment (
     reg_date datetime default now(),
     primary key (cno));
 );
+--코멘트 테이블 추가 점수
+ALTER TABLE comment ADD COLUMN score INT DEFAULT 0;
 

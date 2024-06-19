@@ -5,8 +5,8 @@
 <mapper namespace="com.ezen.www.repository.ReviewPageMapper">
 
     <insert id="post">
-        insert into comment (tno, writer, content)
-        values (#{tno}, #{writer}, #{content})
+        insert into comment (tno, writer, content, score)
+        values (#{tno}, #{writer}, #{content}, #{score})
     </insert>
 
     <select id="detail" resultType="com.ezen.www.domain.TeacherVO">
@@ -31,8 +31,14 @@
 
     <update id="update">
         update comment
-        set content = #{content}
+        set content = #{content},
+        score = #{score}
         where cno = #{cno}
     </update>
-
+    <select id="getCommentCount" resultType="int">
+        select count(*) from comment where tno = #{tno}
+    </select>
+    <select id="getAverageScore" resultType="double">
+        select avg(score) from comment where tno = #{tno}
+    </select>
 </mapper>
