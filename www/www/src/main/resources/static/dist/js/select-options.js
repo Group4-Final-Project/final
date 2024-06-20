@@ -38,7 +38,7 @@ document.getElementById('temporary').addEventListener('change', updateResult);
 
         if (value !== label) {
             if (existingBox) {
-                existingBox.querySelector('span').textContent = `${label}: ${selected}: ${value}`;
+                existingBox.querySelector('p').textContent = `${label}: ${selected}: ${value}원`;
             } else {
                 resultDiv.appendChild(createResultBox(label, value, selected, select.id));
             }
@@ -51,8 +51,6 @@ document.getElementById('temporary').addEventListener('change', updateResult);
 
 
     function createResultBox(label, value, selected, selectId) {
-
-        
         const box = document.createElement('div');
         box.classList.add(`${selectId}-box`);
         box.style.border = '1px solid #ccc';
@@ -60,18 +58,18 @@ document.getElementById('temporary').addEventListener('change', updateResult);
         box.style.margin = '5px';
         box.style.display = 'flex';
         box.style.flexDirection = 'column';
-
-         // text와 deleteButton을 포함할 wrapper 요소 생성
+    
+        // text와 deleteButton을 포함할 wrapper 요소 생성
         const contentWrapper = document.createElement('div');
         contentWrapper.style.display = 'flex'; // 요소들을 가로로 배치합니다.
         contentWrapper.style.justifyContent = 'space-between';
-
+    
         // 텍스트 표시용 span 요소 생성
-        const text = document.createElement('span');
-        text.textContent = `${label}: ${selected}: ${value}`;
+        const text = document.createElement('p');
+        text.textContent = `${label}: ${selected}: ${value}원`;
         // text 요소를 contentWrapper에 추가합니다.
         contentWrapper.appendChild(text);
-
+    
         // 삭제 버튼 생성
         const deleteButton = document.createElement('a');
         deleteButton.classList.add('deleteButton');
@@ -85,29 +83,11 @@ document.getElementById('temporary').addEventListener('change', updateResult);
         deleteButton.onclick = () => box.remove();
         // deleteButton 요소를 contentWrapper에 추가합니다.
         contentWrapper.appendChild(deleteButton);
-
+    
         // contentWrapper를 box에 추가합니다.
         box.appendChild(contentWrapper);
-        
-
-        // 하단 박스 생성
-        const bottombox = document.createElement('div');
-        bottombox.classList.add('bottombox');
-        bottombox.style.marginTop = '10px'; // 상단 여백 설정
-
-        // 하단 박스에 수평선 추가
-        const hr = document.createElement('hr');
-        hr.style.width = '100%';
-        hr.style.marginTop = '10px';
-        hr.style.marginBottom = '10px';
-        box.appendChild(hr);
-
-        bottombox.innerHTML=`<span class="PriceTotal"></span>`;
-
-
-        // 상위 박스에 하단 박스 추가
-        box.appendChild(bottombox);
-
+    
+    
         return box;
     }
 
@@ -117,76 +97,101 @@ document.getElementById('temporary').addEventListener('change', updateResult);
         return urlParams.get(param);
     }
 
-            
 
-            // idx 쿼리 파라미터에 따라 h3의 내용과 temp의 html을 바꾸기
-            window.onload = function() {
-                const idx = getQueryParam('idx');
-                const idxDisplay = document.getElementById('idx-display');
-                const idxHtml = document.getElementById('temporary');
+// idx 쿼리 파라미터에 따라 h3의 내용과 temp의 html을 바꾸기
+window.onload = function() {
+    const idx = getQueryParam('idx');
+    const idxHtml = document.getElementById('temporary');
 
-                if (idx === '1') {
-                    idxDisplay.textContent = '미용 (소형견 기준/옵션 추가)';
-                    idxHtml.innerHTML = `
-                        <option value="부분스타일 (선택)" selected>부분스타일 (선택)</option>
-                        <option value="4">얼굴</option>
-                        <option value="5">귀</option>
-                        <option value="6">발</option>
-                        <option value="7">꼬리</option>
-                    `;
-                } else if (idx === '2') {
-                    idxDisplay.textContent = '목욕 (소형견 기준/옵션 추가)';
-                    idxHtml.innerHTML = `
-                        <option value="머드팩 (선택)" selected>머드팩 (선택)</option>
-                        <option value="1">소형</option>
-                        <option value="2">중형</option>
-                        <option value="3">대형</option>
-                    `;
-                }
+    if (idx === '1') {
+        idxHtml.innerHTML = `
+            <option value="부분스타일 (선택)" selected>부분스타일 (선택)</option>
+            <option value="4">얼굴</option>
+            <option value="5">귀</option>
+            <option value="6">발</option>
+            <option value="7">꼬리</option>
+        `;
+    } else if (idx === '2') {
+        idxHtml.innerHTML = `
+            <option value="머드팩 (선택)" selected>머드팩 (선택)</option>
+            <option value="1">소형</option>
+            <option value="2">중형</option>
+            <option value="3">대형</option>
+        `;
+    }
+}
+function setSelectOption() {
+    const idx = getQueryParam('idx');
+    const size = document.getElementById('size');
 
-            }
+    function setInnerHTML(html) {
+        size.innerHTML = html;
+    }
 
-            function setIdxDiplay(){
-                const idx = getQueryParam('idx');
-                const idxDisplay = document.getElementById('idx-display');
+    if (idx === '1') {
+        setInnerHTML(`
+            <option value="크기 (필수)" selected>크기 (필수)</option>
+            <option value="50000">소형</option>
+            <option value="60000">중형</option>
+            <option value="70000">대형</option>
+        `);
+    }else if(idx === '2'){
+        setInnerHTML(`
+            <option value="크기 (필수)" selected>크기 (필수)</option>
+            <option value="52000">소형</option>
+            <option value="62000">중형</option>
+            <option value="72000">대형</option>
+        `);
+    }
+}
 
-                function setInnerHTML(html) {
-                    idxDisplay.innerHTML = html;
-                }
-
-                if(idx === '3'){
-                    setInnerHTML(`발톱정리 위생미용(Only)`);
-                }else if(idx === '4'){
-                    setInnerHTML(`돌봄(+60분,+120분)`);
-                }else if(idx === '5'){
-                    setInnerHTML(`[이벤트]펫VIP 서비스 100만원 정액권`);
-                }else if(idx === '6'){
-                    setInnerHTML(`[이벤트]펫VIP 서비스 50만원 정액권`);
-                }else if(idx === '7'){
-                    setInnerHTML(`[이벤트]펫VIP 서비스 30만원 정액권`);
-                }else if(idx === '8'){
-                    setInnerHTML(`[이벤트] 꽃단장,나들이 촬영 패키지`);
-                }
-            }
-
-            setIdxDiplay();
+setSelectOption();
 
 
-            function setOptionTitle(){
-                const idx = getQueryParam('idx');
-                const idxTitleDisplay = document.getElementById('option-title');
+function setIdxDiplay(){
+    const idx = getQueryParam('idx');
+    const idxDisplay = document.getElementById('idx-display');
 
-                function setInnerHTML(html) {
-                    idxTitleDisplay.innerHTML = html;
-                }
+    function setInnerHTML(html) {
+        idxDisplay.innerHTML = html;
+    }
+    if(idx === '1'){
+        setInnerHTML(`<p>미용 (소형견 기준/옵션 추가)</p>`);
+    }else if(idx === '2'){
+        setInnerHTML(`<p>목욕 (소형견 기준/옵션 추가)</p>`);
+    }else if(idx === '3'){
+        setInnerHTML(`<p>발톱정리 위생미용(Only)</p>`);
+    }else if(idx === '4'){
+        setInnerHTML(`<p>돌봄(+60분,+120분)</p>`);
+    }else if(idx === '5'){
+        setInnerHTML(`<p>[이벤트]펫VIP 서비스 100만원 정액권</p>`);
+    }else if(idx === '6'){
+        setInnerHTML(`<p>[이벤트]펫VIP 서비스 50만원 정액권</p>`);
+    }else if(idx === '7'){
+        setInnerHTML(`<p>[이벤트]펫VIP 서비스 30만원 정액권</p>`);
+    }else if(idx === '8'){
+        setInnerHTML(`<p>[이벤트] 꽃단장,나들이 촬영 패키지</p>`);
+    }
+}
 
-                if(idx === '1' || idx === '2' || idx === '3' || idx === '4'){
-                    setInnerHTML('반려견 서비스');
-                }else{
-                    setInnerHTML('이벤트');
-                }
-            }
-            setOptionTitle();
+setIdxDiplay();
+
+
+function setOptionTitle(){
+    const idx = getQueryParam('idx');
+    const idxTitleDisplay = document.getElementById('option-title');
+
+    function setInnerHTML(html) {
+        idxTitleDisplay.innerHTML = html;
+    }
+
+    if(idx === '1' || idx === '2' || idx === '3' || idx === '4'){
+        setInnerHTML('반려견 서비스');
+    }else{
+        setInnerHTML('이벤트');
+    }
+}
+setOptionTitle();
 // 상세 내용 이미지
 
 const DetailimageUrls = {
