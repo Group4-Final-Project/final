@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const tnoElement = document.querySelector('.review_image');
             const tno = tnoElement ? parseInt(tnoElement.dataset.tno, 10) : NaN;
 
-            console.log("tno 값:", tno);
-
             if (cmtText == null || cmtText === '') {
                 alert("댓글을 입력해주세요");
                 document.getElementById('cmtText').focus();
@@ -21,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     content: cmtText,
                     score: cmtScore
                 };
-                console.log("댓글 데이터:", cmtData);
 
                 const result = await postCommentServer(cmtData);
                 if (result === "1") {
@@ -55,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (e.target.classList.contains('mod')) {
             const cno = e.target.dataset.cno;
             const content = e.target.closest('li').querySelector('.comment-content').textContent.replace('리뷰 내용:', '');
-            const score = e.target.closest('li').querySelector('.comment-score').textContent.replace('점수:', '');
+            const score = e.target.closest('li').querySelector('.comment-score').dataset.score;
             document.getElementById('modifyCno').value = cno;
             document.getElementById('modifyContent').value = content;
             document.getElementById('modifyScore').value = score;
@@ -106,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function spreadCommentList(tno, page = 1) {
     CommentList(tno, page).then(result => {
-        console.log("댓글 목록: ", result);
         const ul = document.getElementById('cmtListArea');
         const commentCountDiv = document.getElementById('commentCount');
         const averageScoreDiv = document.getElementById('averageScore');
@@ -119,7 +115,7 @@ function spreadCommentList(tno, page = 1) {
                 li += `<div class="teacher-name">매니저 이름: ${cvo.teacherName}</div>`;
                 li += `<div class="comment-writer">작성자: ${cvo.writer}</div>`;
                 li += `<div class="comment-content">리뷰 내용:${cvo.content}</div>`;
-                li += `<div class="comment-score score-${cvo.score}">점수:${cvo.score}</div>`; // 점수에 따른 클래스 추가
+                li += `<div class="comment-score" data-score="${cvo.score}">${getStarRating(cvo.score)}</div>`;
                 li += `<div class="comment-regdate">작성시간:${cvo.regDate}</div>`;
                 li += `<button type="button" class="btn btn-outline-warning btn-sm mod" data-bs-toggle="modal" data-bs-target="#myModal" data-cno="${cvo.cno}">수정</button>`;
                 li += `<button type="button" data-cno="${cvo.cno}" class="btn btn-outline-danger btn-sm del">삭제</button>`;
@@ -128,8 +124,8 @@ function spreadCommentList(tno, page = 1) {
             commentCountDiv.innerHTML = `댓글 수: ${result.length}`;
             updateCommentStats(tno); // 댓글 수 및 평균 점수 갱신
         } else {
-            ul.innerHTML = '';
-            commentCountDiv.innerHTML = '댓글이 없습니다.';
+            ul.innerHTML = '댓글이 없습니다.';
+            commentCountDiv.innerHTML = '';
             averageScoreDiv.innerHTML = '';
         }
     }).catch(error => {
@@ -142,7 +138,7 @@ function updateCommentStats(tno) {
         .then(response => response.json())
         .then(count => {
             const commentCountDiv = document.getElementById('commentCount');
-            commentCountDiv.innerHTML = `댓글 수: ${count}`;
+            commentCountDiv.innerHTML = count > 0 ? `댓글 수: ${count}` : '';
         })
         .catch(error => {
             console.error("댓글 수를 불러오는 중 오류 발생: ", error);
@@ -152,15 +148,30 @@ function updateCommentStats(tno) {
         .then(response => response.json())
         .then(averageScore => {
             const averageScoreDiv = document.getElementById('averageScore');
-            if (averageScore !== null) {
-                averageScoreDiv.innerHTML = `평균 점수: ${averageScore.toFixed(2)}`;
-            } else {
-                averageScoreDiv.innerHTML = ''; // 댓글이 없는 경우 평균 점수 초기화
-            }
+            averageScoreDiv.innerHTML = averageScore > 0 ? `평균 별점: ${getStarRating(averageScore)}` : '';
         })
         .catch(error => {
             console.error("평균 점수를 불러오는 중 오류 발생: ", error);
         });
+}
+
+function getStarRating(score) {
+    const fullStars = Math.floor(score);
+    const hasHalfStar = score % 1 !== 0;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+
+    let starsHtml = '';
+    for (let i = 0; i < fullStars; i++) {
+        starsHtml += '<span class="star full">★</span>';
+    }
+    if (hasHalfStar) {
+        starsHtml += '<span class="star half">☆</span>';
+    }
+    for (let i = 0; i < emptyStars; i++) {
+        starsHtml += '<span class="star empty">☆</span>';
+    }
+    return starsHtml;
 }
 
 async function postCommentServer(cmtData) {

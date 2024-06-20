@@ -1,3 +1,4 @@
+/* 기본 스타일 */
 .rp_container {
     padding: 0;
     margin: 0 auto;
@@ -19,11 +20,10 @@
 }
 
 .rp_container > .teacher_name > .top_name {
-    color: rgb(34, 204, 137)
+    color: rgb(34, 204, 137);
 }
 
-/* 끝 */
-
+/* 이미지 설정 */
 .rp_container > .top_image {
     width: 50%;
     margin: auto;
@@ -47,13 +47,11 @@
     text-align: left; /* 텍스트를 왼쪽 정렬 */
 }
 
-.list-group-item {
-    text-align: left;
-}
+
 
 .teacher-name {
     font-weight: bold;
-    color: rgb(34, 204, 137)
+    color: rgb(34, 204, 137);
 }
 
 .comment-writer,
@@ -110,30 +108,32 @@
 
 .manager-list > ul > li > a {
     text-decoration: none;
-    color: rgb(34, 204, 137)
+    color: rgb(34, 204, 137);
 }
 
 .manager-list > ul > li > a:hover {
     text-decoration: underline;
 }
 
-/* 점수에 따른 색상 설정 */
-.score-1 {
-    color: #8B0000;
-}
-
-.score-2 {
-    color: #FF4500;
-}
-
-.score-3 {
+/* 별점 표시 스타일 */
+.star.full {
     color: #FFD700;
 }
 
-.score-4 {
-    color: #7FFF00;
+.star.half {
+    color: #FFD700;
+    position: relative;
 }
 
-.score-5 {
-    color: #32CD32;
+.star.half:before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #FFD700;
+}
+
+.star.empty {
+    color: #ddd;
 }
