@@ -106,6 +106,8 @@ function spreadCommentList(tno, page = 1) {
         const ul = document.getElementById('cmtListArea');
         const commentCountDiv = document.getElementById('commentCount');
         const averageScoreDiv = document.getElementById('averageScore');
+        const username = document.getElementById('cmtWriter').innerHTML; // 현재 로그인된 사용자 이름 가져오기
+
         if (result.length > 0) {
             if (page === 1) {
                 ul.innerHTML = '';
@@ -117,8 +119,10 @@ function spreadCommentList(tno, page = 1) {
                 li += `<div class="comment-content">리뷰 내용:${cvo.content}</div>`;
                 li += `<div class="comment-score" data-score="${cvo.score}">${getStarRating(cvo.score)}</div>`;
                 li += `<div class="comment-regdate">작성시간:${cvo.regDate}</div>`;
-                li += `<button type="button" class="btn btn-outline-warning btn-sm mod" data-bs-toggle="modal" data-bs-target="#myModal" data-cno="${cvo.cno}">수정</button>`;
-                li += `<button type="button" data-cno="${cvo.cno}" class="btn btn-outline-danger btn-sm del">삭제</button>`;
+                if (cvo.writer === username) { // 현재 로그인된 사용자가 댓글 작성자인 경우에만 수정/삭제 버튼 보이기
+                    li += `<button type="button" class="btn btn-outline-warning btn-sm mod" data-bs-toggle="modal" data-bs-target="#myModal" data-cno="${cvo.cno}">수정</button>`;
+                    li += `<button type="button" data-cno="${cvo.cno}" class="btn btn-outline-danger btn-sm del">삭제</button>`;
+                }
                 ul.innerHTML += li;
             }
             commentCountDiv.innerHTML = `댓글 수: ${result.length}`;
@@ -159,7 +163,6 @@ function getStarRating(score) {
     const fullStars = Math.floor(score);
     const hasHalfStar = score % 1 !== 0;
     const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-
 
     let starsHtml = '';
     for (let i = 0; i < fullStars; i++) {

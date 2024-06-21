@@ -24,7 +24,7 @@
             <!-- comment 등록 라인 -->
             <!-- post 라인 -->
             <div class="input-group mb-3">
-                <span class="input-group-text" id="cmtWriter">anymore</span>
+                <span class="input-group-text" id="cmtWriter" th:text="${username}">anymore</span> <!-- 사용자 이름 표시 -->
                 <input type="text" id="cmtText" class="form-control comment-input" placeholder="Add Comment..."
                        aria-label="Username" aria-describedby="basic-addon1">
                 <select id="cmtScore" class="form-select score-select">

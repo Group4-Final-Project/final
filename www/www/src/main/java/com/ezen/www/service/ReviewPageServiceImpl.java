@@ -55,4 +55,9 @@ public class ReviewPageServiceImpl implements ReviewPageService{
         return reviewPageMapper.getAverageScore(tno);
     }
 
+    @Override
+    public CommentVO getComment(int cno) {
+        return reviewPageMapper.getComment(cno);
+    }
+
 }

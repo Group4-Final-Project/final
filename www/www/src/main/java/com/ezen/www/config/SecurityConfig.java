@@ -25,14 +25,14 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-        return http.csrf(csrf -> csrf.disable())
+        /*return http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize
                         -> authorize
                         .anyRequest().permitAll())  // 모든 요청을 허용
-                .build();
+                .build();*/
 
 
-       /* return http.csrf(csrf -> csrf.disable())
+        return http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize
                         -> authorize
                         .requestMatchers
@@ -54,7 +54,7 @@ public class SecurityConfig {
                         .invalidateHttpSession(true)
                         .deleteCookies("JSESSIONID")
                         .logoutSuccessUrl("/")
-                ).build();*/
+                ).build();
     }
 
     @Bean

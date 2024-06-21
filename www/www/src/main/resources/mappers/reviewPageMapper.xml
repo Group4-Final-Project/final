@@ -41,4 +41,7 @@
     <select id="getAverageScore" resultType="double">
         select avg(score) from comment where tno = #{tno}
     </select>
+    <select id="getComment" resultType="com.ezen.www.domain.CommentVO">
+        SELECT * FROM comment WHERE cno = #{cno}
+    </select>
 </mapper>

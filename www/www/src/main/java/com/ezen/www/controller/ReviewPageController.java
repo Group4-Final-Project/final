@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -19,20 +20,23 @@ public class ReviewPageController {
     private final ReviewPageService rps;
 
     @GetMapping("/reviewPage")
-    public String review(Model m, @RequestParam("tno") int tno) {
+    public String review(Model m, @RequestParam("tno") int tno, Principal principal) {
         TeacherVO tvo = rps.detail(tno);
         List<TeacherVO> teacherList = rps.getAllTeachers();
+        String username = principal != null ? principal.getName() : "";
         m.addAttribute("tvo", tvo);
         m.addAttribute("teacherList", teacherList);
+        m.addAttribute("username", username);
         log.info(">>tvo>>{}", tvo);
         return "/review/reviewPage";
     }
 
     @PostMapping("/post")
     @ResponseBody
-    public String post(@RequestBody CommentVO cvo) {
+    public String post(@RequestBody CommentVO cvo,Principal principal) {
         log.info("Received comment: {}", cvo);
         try {
+            cvo.setWriter(principal.getName());
             int isOk = rps.post(cvo);
             return isOk > 0 ? "1" : "0";
         } catch (Exception e) {
@@ -47,21 +51,31 @@ public class ReviewPageController {
     }
     @DeleteMapping("/delete")
     @ResponseBody
-    public String delete(@RequestParam("cno") int cno) {
+    public String delete(@RequestParam("cno") int cno,Principal principal) {
         try {
-            int isOk = rps.delete(cno);
-            return isOk > 0 ? "1" : "0";
+            CommentVO cvo = rps.getComment(cno);
+            if (cvo.getWriter().equals(principal.getName())) {
+                int isOk = rps.delete(cno);
+                return isOk > 0 ? "1" : "0";
+            } else {
+                return "0"; // 권한이 없는 경우
+            }
         } catch (Exception e) {
             return "0";
         }
     }
     @PutMapping("/modify")
     @ResponseBody
-    public String modify(@RequestBody CommentVO cvo) {
+    public String modify(@RequestBody CommentVO cvo,Principal principal) {
         log.info("Modifying comment: {}", cvo);
         try {
-            int isOk = rps.update(cvo);
-            return isOk > 0 ? "1" : "0";
+            CommentVO existingComment = rps.getComment(cvo.getCno());
+            if (existingComment.getWriter().equals(principal.getName())) {
+                int isOk = rps.update(cvo);
+                return isOk > 0 ? "1" : "0";
+            } else {
+                return "0"; // 권한이 없는 경우
+            }
         } catch (Exception e) {
             return "0";
         }
