@@ -26,35 +26,33 @@
                     <hr>
                     <div id="idx-text"></div>
                     <form action="/reservation/booking" method="get">
+
                         <p>기본사항*</p>
                         <select class="form-select" id="size" aria-label="Default select example">
                             <option value="크기 (필수)" selected>크기 (필수)</option>
-
                         </select>
                         <hr>
                         <p>추가사항</p>
-                        <select class="form-select" id="fur" aria-label="Default select example">
+                        <select class="form-select" id="fur" aria-label="Default select example" style="display: none">
                             <option value="털엉킴,뭉침 추가 (선택)" selected>털엉킴,뭉침 추가 (선택)</option>
-                            <option value="1">소형</option>
-                            <option value="2">중형</option>
-                            <option value="3">대형</option>
                         </select>
-                        <select class="form-select" id="aggression" aria-label="Default select example">
+                        <br>
+                        <select class="form-select" id="aggression" aria-label="Default select example" style="display: none">
                             <option value="공격성 추가 (선택)" selected>공격성 추가 (선택)</option>
-                            <option value="1">소형</option>
-                            <option value="2">중형</option>
-                            <option value="3">대형</option>
                         </select>
-                        <hr>
-                        <select class="form-select" id="temporary" aria-label="Default select example">
+                        <br>
+                        <select class="form-select" id="CutM" aria-label="Default select example" style="display: none">
+                            <option value="미리수 (선택)" selected>미리수 (선택)</option>
+                        </select>
+                        <br>
+                        <select class="form-select" id="temporary" aria-label="Default select example" style="display: none">
                             <option value="임시 (선택)" selected>임시 (선택)</option>
-                            <option value="1">소형</option>
-                            <option value="2">중형</option>
-                            <option value="3">대형</option>
                         </select>
+                        <br>
                         <hr>
                         <div id="result"></div>
-                        <div id="totalbox"><span id="totalPrice"></span> </div>
+                        <hr>
+                        <div id="full-total"></div>
                         <div class="select-buy-btn">
                         <button class="select-reservation-btn" type="submit" onclick="location.href='#'">예약하기</button>
                         <button class="select-add-btn" type="submit" onclick="location.href='#'">담기</button>
